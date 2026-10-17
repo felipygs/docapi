@@ -14,7 +14,7 @@ from .consultar import (
 
 app = FastAPI(
     title="Simplix DocAPI",
-    version="1.0.0",
+    version="2.0.0",
     description="""
 ## API de Consulta CNPJ / MEI
 
@@ -37,6 +37,26 @@ Aceita com ou sem mascara: `45.726.608/0001-36` ou `45726608000136`
 As consultas acessam portais externos da Receita Federal em tempo real e podem
 levar de **15 a 60 segundos** dependendo da carga dos servidores governamentais.
 A consulta completa (`/consultar`) executa os 3 modulos sequencialmente.
+
+### Migracao do contrato de Optantes — 2.0.0 (quebra de compatibilidade)
+O novo contrato substitui a resposta anterior em `POST /consultar/optantes` e no
+bloco `optantes` de `POST /consultar`, sem alterar as rotas ou a entrada `cnpj`.
+`eventos_futuros` deixa de ser texto tabulado ou `null` e passa a ser uma lista de
+objetos com `descricao` integral e `data_efeito` em `YYYY-MM-DD`.
+Historicos e eventos sao independentes para Simples Nacional e SIMEI; uma exclusao
+futura nao altera o booleano da situacao atual.
+
+A resposta inclui CNPJ consultado e matriz, nome empresarial, abrangencia e
+`consultado_em`: horario local exibido pela Receita, sem fuso presumido.
+`mei_transportador.possui_periodos` informa ausencia confirmada ou existencia de
+conteudo, preservado em `detalhes` quando preenchido. Colunas e secoes adicionais
+sao preservadas em campos condicionais, omitidos quando vazios.
+
+Uma lista `[]` significa ausencia explicitamente confirmada; nao significa erro
+ou secao nao coletada. Datas opcionais explicitamente vazias permanecem `null`.
+Nao ha resposta HTTP 200 parcial de Optantes: falha ou ambiguidade de extracao
+retorna **502**, e timeout externo retorna **504**. Os contratos cadastral e DASN
+permanecem inalterados.
 
 ### Codigos de erro
 | Codigo | Significado |
@@ -157,9 +177,11 @@ async def consultar_dasn(req: ConsultaRequest):
     responses=_ERROR_RESPONSES,
     tags=["Consulta Individual"],
     summary="Consultar situacao Simples Nacional / SIMEI",
-    description="Retorna a situacao atual e historico de periodos anteriores no "
-                "Simples Nacional e SIMEI, incluindo datas de opcao/enquadramento "
-                "e eventuais eventos futuros programados.",
+    description="Contrato 2.0.0: identificacao, horario local da origem sem fuso, "
+                "situacoes atuais, historicos independentes e eventos futuros em listas "
+                "de descricao/data_efeito, alem de MEI Transportador. Substitui eventos "
+                "em texto/null; [] confirma ausencia. Nao retorna sucesso parcial: "
+                "secoes incompletas ou ambiguas geram 502 e timeout gera 504.",
     response_description="Situacao no Simples Nacional e SIMEI",
 )
 async def consultar_optantes(req: ConsultaRequest):
