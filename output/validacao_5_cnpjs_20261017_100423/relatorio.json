@@ -1,0 +1,372 @@
+{
+  "inicio": "2026-10-17T10:05:10-03:00",
+  "cnpjs": [
+    "43996591000101",
+    "45726608000136",
+    "53987789000182",
+    "57435953000108",
+    "12309631000176"
+  ],
+  "consultas": [
+    {
+      "cnpj": "43996591000101",
+      "tipo": "completa",
+      "rota": "/consultar",
+      "inicio": "2026-10-17T10:05:10-03:00",
+      "http": 502,
+      "resposta": {
+        "detail": "CNPJ - Captcha nao resolvido (configure NOPECHA_API_KEY)"
+      },
+      "validacao": "origem_nao_concluiu",
+      "duracao_segundos": 41.92
+    },
+    {
+      "cnpj": "43996591000101",
+      "tipo": "dasn",
+      "rota": "/consultar/dasn",
+      "inicio": "2026-10-17T10:05:52-03:00",
+      "http": 502,
+      "resposta": {
+        "detail": "Optantes - Eventos Futuros (Simples Nacional): limites do painel inválidos"
+      },
+      "validacao": "origem_nao_concluiu",
+      "duracao_segundos": 19.6
+    },
+    {
+      "cnpj": "43996591000101",
+      "tipo": "optantes",
+      "rota": "/consultar/optantes",
+      "inicio": "2026-10-17T10:06:12-03:00",
+      "http": 502,
+      "resposta": {
+        "detail": "Optantes - Eventos Futuros (Simples Nacional): limites do painel inválidos"
+      },
+      "validacao": "origem_nao_concluiu",
+      "duracao_segundos": 11.06
+    },
+    {
+      "cnpj": "45726608000136",
+      "tipo": "completa",
+      "rota": "/consultar",
+      "inicio": "2026-10-17T10:06:23-03:00",
+      "http": 502,
+      "resposta": {
+        "detail": "CNPJ - Captcha nao resolvido (configure NOPECHA_API_KEY)"
+      },
+      "validacao": "origem_nao_concluiu",
+      "duracao_segundos": 42.39
+    },
+    {
+      "cnpj": "45726608000136",
+      "tipo": "dasn",
+      "rota": "/consultar/dasn",
+      "inicio": "2026-10-17T10:07:05-03:00",
+      "http": 200,
+      "resposta": {
+        "razao_social": "IVANUSA DE O MELO COMERCIO",
+        "mei_baixada": false,
+        "data_baixa": null,
+        "declaracoes": [
+          {
+            "ano": 2025,
+            "retificadora": false,
+            "status": "não optante",
+            "data_apresentacao": null,
+            "pendente": false,
+            "baixada": false,
+            "situacao_especial": null,
+            "data_baixa": null
+          },
+          {
+            "ano": 2024,
+            "retificadora": false,
+            "status": "não optante",
+            "data_apresentacao": null,
+            "pendente": false,
+            "baixada": false,
+            "situacao_especial": null,
+            "data_baixa": null
+          },
+          {
+            "ano": 2023,
+            "retificadora": true,
+            "status": "apresentada",
+            "data_apresentacao": "2026-01-15",
+            "pendente": false,
+            "baixada": false,
+            "situacao_especial": null,
+            "data_baixa": null
+          },
+          {
+            "ano": 2022,
+            "retificadora": true,
+            "status": "apresentada",
+            "data_apresentacao": "2023-05-31",
+            "pendente": false,
+            "baixada": false,
+            "situacao_especial": null,
+            "data_baixa": null
+          },
+          {
+            "ano": 2021,
+            "retificadora": false,
+            "status": "não optante",
+            "data_apresentacao": null,
+            "pendente": false,
+            "baixada": false,
+            "situacao_especial": null,
+            "data_baixa": null
+          }
+        ],
+        "pendentes": [],
+        "alertas": []
+      },
+      "validacao": "aprovada",
+      "duracao_segundos": 10.05
+    },
+    {
+      "cnpj": "45726608000136",
+      "tipo": "optantes",
+      "rota": "/consultar/optantes",
+      "inicio": "2026-10-17T10:07:15-03:00",
+      "http": 502,
+      "resposta": {
+        "detail": "Optantes - Eventos Futuros (Simples Nacional): limites do painel inválidos"
+      },
+      "validacao": "origem_nao_concluiu",
+      "duracao_segundos": 8.09
+    },
+    {
+      "cnpj": "53987789000182",
+      "tipo": "completa",
+      "rota": "/consultar",
+      "inicio": "2026-10-17T10:07:23-03:00",
+      "http": 502,
+      "resposta": {
+        "detail": "CNPJ - Captcha nao resolvido (configure NOPECHA_API_KEY)"
+      },
+      "validacao": "origem_nao_concluiu",
+      "duracao_segundos": 36.79
+    },
+    {
+      "cnpj": "53987789000182",
+      "tipo": "dasn",
+      "rota": "/consultar/dasn",
+      "inicio": "2026-10-17T10:08:00-03:00",
+      "http": 502,
+      "resposta": {
+        "detail": "Optantes - Eventos Futuros (Simples Nacional): limites do painel inválidos"
+      },
+      "validacao": "origem_nao_concluiu",
+      "duracao_segundos": 26.42
+    },
+    {
+      "cnpj": "53987789000182",
+      "tipo": "optantes",
+      "rota": "/consultar/optantes",
+      "inicio": "2026-10-17T10:08:27-03:00",
+      "http": 502,
+      "resposta": {
+        "detail": "Optantes - Eventos Futuros (Simples Nacional): limites do painel inválidos"
+      },
+      "validacao": "origem_nao_concluiu",
+      "duracao_segundos": 16.36
+    },
+    {
+      "cnpj": "57435953000108",
+      "tipo": "completa",
+      "rota": "/consultar",
+      "inicio": "2026-10-17T10:08:43-03:00",
+      "http": 502,
+      "resposta": {
+        "detail": "CNPJ - Captcha nao resolvido (configure NOPECHA_API_KEY)"
+      },
+      "validacao": "origem_nao_concluiu",
+      "duracao_segundos": 42.27
+    },
+    {
+      "cnpj": "57435953000108",
+      "tipo": "dasn",
+      "rota": "/consultar/dasn",
+      "inicio": "2026-10-17T10:09:25-03:00",
+      "http": 200,
+      "resposta": {
+        "razao_social": "JOSEANE BATISTA SILVA",
+        "mei_baixada": true,
+        "data_baixa": "2025-08-26",
+        "declaracoes": [
+          {
+            "ano": 2025,
+            "retificadora": false,
+            "status": "não apresentada",
+            "data_apresentacao": null,
+            "pendente": true,
+            "baixada": true,
+            "situacao_especial": "Extinção",
+            "data_baixa": "2025-08-26"
+          },
+          {
+            "ano": 2024,
+            "retificadora": true,
+            "status": "apresentada",
+            "data_apresentacao": "2025-06-23",
+            "pendente": false,
+            "baixada": false,
+            "situacao_especial": null,
+            "data_baixa": null
+          },
+          {
+            "ano": 2023,
+            "retificadora": false,
+            "status": "não optante",
+            "data_apresentacao": null,
+            "pendente": false,
+            "baixada": false,
+            "situacao_especial": null,
+            "data_baixa": null
+          },
+          {
+            "ano": 2022,
+            "retificadora": false,
+            "status": "não optante",
+            "data_apresentacao": null,
+            "pendente": false,
+            "baixada": false,
+            "situacao_especial": null,
+            "data_baixa": null
+          },
+          {
+            "ano": 2021,
+            "retificadora": false,
+            "status": "não optante",
+            "data_apresentacao": null,
+            "pendente": false,
+            "baixada": false,
+            "situacao_especial": null,
+            "data_baixa": null
+          }
+        ],
+        "pendentes": [
+          2025
+        ],
+        "alertas": []
+      },
+      "validacao": "aprovada",
+      "duracao_segundos": 13.4
+    },
+    {
+      "cnpj": "57435953000108",
+      "tipo": "optantes",
+      "rota": "/consultar/optantes",
+      "inicio": "2026-10-17T10:09:39-03:00",
+      "http": 502,
+      "resposta": {
+        "detail": "Optantes - Eventos Futuros (Simples Nacional): limites do painel inválidos"
+      },
+      "validacao": "origem_nao_concluiu",
+      "duracao_segundos": 8.91
+    },
+    {
+      "cnpj": "12309631000176",
+      "tipo": "completa",
+      "rota": "/consultar",
+      "inicio": "2026-10-17T10:09:48-03:00",
+      "http": 502,
+      "resposta": {
+        "detail": "CNPJ - Captcha nao resolvido (configure NOPECHA_API_KEY)"
+      },
+      "validacao": "origem_nao_concluiu",
+      "duracao_segundos": 40.1
+    },
+    {
+      "cnpj": "12309631000176",
+      "tipo": "dasn",
+      "rota": "/consultar/dasn",
+      "inicio": "2026-10-17T10:10:28-03:00",
+      "http": 200,
+      "resposta": {
+        "razao_social": "FRANCISCO DAS CHAGAS PEREIRA DE QUEIROZ",
+        "mei_baixada": false,
+        "data_baixa": null,
+        "declaracoes": [
+          {
+            "ano": 2025,
+            "retificadora": true,
+            "status": "apresentada",
+            "data_apresentacao": "2026-03-26",
+            "pendente": false,
+            "baixada": false,
+            "situacao_especial": null,
+            "data_baixa": null
+          },
+          {
+            "ano": 2024,
+            "retificadora": true,
+            "status": "apresentada",
+            "data_apresentacao": "2025-06-16",
+            "pendente": false,
+            "baixada": false,
+            "situacao_especial": null,
+            "data_baixa": null
+          },
+          {
+            "ano": 2023,
+            "retificadora": true,
+            "status": "apresentada",
+            "data_apresentacao": "2024-05-08",
+            "pendente": false,
+            "baixada": false,
+            "situacao_especial": null,
+            "data_baixa": null
+          },
+          {
+            "ano": 2022,
+            "retificadora": true,
+            "status": "apresentada",
+            "data_apresentacao": "2023-01-12",
+            "pendente": false,
+            "baixada": false,
+            "situacao_especial": null,
+            "data_baixa": null
+          },
+          {
+            "ano": 2021,
+            "retificadora": true,
+            "status": "apresentada",
+            "data_apresentacao": "2022-03-28",
+            "pendente": false,
+            "baixada": false,
+            "situacao_especial": null,
+            "data_baixa": null
+          }
+        ],
+        "pendentes": [],
+        "alertas": []
+      },
+      "validacao": "aprovada",
+      "duracao_segundos": 18.7
+    },
+    {
+      "cnpj": "12309631000176",
+      "tipo": "optantes",
+      "rota": "/consultar/optantes",
+      "inicio": "2026-10-17T10:10:46-03:00",
+      "http": 502,
+      "resposta": {
+        "detail": "Optantes - Eventos Futuros (Simples Nacional): limites do painel inválidos"
+      },
+      "validacao": "origem_nao_concluiu",
+      "duracao_segundos": 15.34
+    }
+  ],
+  "fim": "2026-10-17T10:11:02-03:00",
+  "diagnostico_optantes": {
+    "causa_limites": "Eventos Futuros e Transportador estao sob #maisInfoComplementar, descendente de #maisInfo. O snapshot exige pai direto #maisInfo e marca complementar=false.",
+    "segundo_problema_observado": "O intervalo historico SIMEI inclui a nova secao de periodos IBS/CBS com Informacao indisponivel. Esse texto causa erro de consulta incompleta no SIMEI.",
+    "experimento_offline_ajustando_somente_ancestralidade": "DadosIncompletosError: Optantes - Períodos Anteriores (SIMEI): consulta incompleta ou erro da origem",
+    "estrutura": "optantes_diagnostico.json",
+    "snapshot": "optantes_snapshot.json",
+    "imagem": "optantes_diagnostico.png",
+    "codigo_da_aplicacao_alterado_nesta_validacao": false
+  }
+}

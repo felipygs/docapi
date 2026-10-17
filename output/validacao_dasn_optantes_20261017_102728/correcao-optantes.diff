@@ -1,0 +1,64 @@
+--- antes/app/scrapers/optantes_parser.py
++++ app/scrapers/optantes_parser.py
+@@ -114,18 +114,20 @@
+         const body = bodies.length === 1 ? bodies[0] : null;
+         const snap = {
+             titulo: titles.length === 1 ? space(titles[0].textContent) : '',
+-            complementar: panel.parentElement?.id === 'maisInfo',
++            complementar: panel.closest('#maisInfo') !== null,
+             conteudo: body ? content(body) : null,
+         };
+         if (body && norm(snap.titulo) === norm('Períodos Anteriores')) {
+             // Ranges de texto dentro DESTE corpo. Incluem filhos do rótulo
+             // (Não Existem) e irmãos seguintes até o próximo rótulo fiscal.
++            // IBS/CBS delimita uma seção adicional, sem virar histórico SIMEI.
++            const labels = [...rotulos, 'Opções pelo Regime Regular IBS/CBS em Períodos Anteriores:'];
+             const walker = document.createTreeWalker(body, NodeFilter.SHOW_TEXT);
+             const starts = [];
+             while (walker.nextNode()) {
+                 const n = walker.currentNode;
+                 if (n.parentElement.closest('table,script,style,button')) continue;
+-                rotulos.forEach((label, index) => {
++                labels.forEach((label, index) => {
+                     const value = norm(n.textContent);
+                     if (value.startsWith(norm(label))) {
+                         const colon = n.textContent.indexOf(':');
+@@ -133,17 +135,22 @@
+                     }
+                 });
+             }
++            const intervalContent = (start, offset) => {
++                const next = starts[starts.indexOf(start) + 1];
++                const range = document.createRange();
++                range.setStart(start.node, offset);
++                if (next) range.setEnd(next.node, 0); else range.setEnd(body, body.childNodes.length);
++                return content(range.cloneContents());
++            };
+             snap.historicos = rotulos.map((_, index) => {
+                 const matches = starts.filter(s => s.index === index);
+                 if (matches.length !== 1) return null;
+-                const start = matches[0];
+-                const next = starts[starts.indexOf(start) + 1];
+-                const range = document.createRange();
+-                range.setStart(start.node, start.offset);
+-                if (next) range.setEnd(next.node, 0); else range.setEnd(body, body.childNodes.length);
+-                return content(range.cloneContents());
++                return intervalContent(matches[0], matches[0].offset);
+             });
+-            snap.limites_validos = starts.length === rotulos.length && new Set(starts.map(s => s.index)).size === rotulos.length;
++            snap.adicionais_historicos = starts.filter(s => s.index >= rotulos.length)
++                .map(start => intervalContent(start, 0));
++            const required = starts.filter(s => s.index < rotulos.length);
++            snap.limites_validos = required.length === rotulos.length && new Set(required.map(s => s.index)).size === rotulos.length;
+             if (snap.limites_validos) {
+                 const prefix = document.createRange();
+                 prefix.setStart(body, 0);
+@@ -340,6 +347,8 @@
+     if antes and (antes["texto"] or antes["tabelas"]):
+         _validar_estado(antes, HISTORICOS)
+         adicionais.append({"secao": HISTORICOS, **_generico(antes, HISTORICOS)})
++    for conteudo_adicional in history.get("adicionais_historicos", []):
++        adicionais.append({"secao": HISTORICOS, **_generico(conteudo_adicional, HISTORICOS)})
+     for i, (regime, dados, titulo) in enumerate((("Simples Nacional", simples, EVENTOS_SIMPLES), ("SIMEI", simei, EVENTOS_SIMEI))):
+         dados["periodos_anteriores"] = _lista(history["historicos"][i], f"{HISTORICOS} ({regime})", {"Data Inicial": "data_inicial", "Data Final": "data_final", "Detalhamento": "detalhamento"}, {"data_inicial", "data_final"}, adicionais)
+         dados["eventos_futuros"] = _lista(_painel(snapshot, titulo, True)["conteudo"], titulo, {"Descrição do Evento": "descricao", "Data Efeito": "data_efeito"}, {"data_efeito"}, adicionais)

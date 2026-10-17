@@ -1,0 +1,21 @@
+2026-10-17 10:27:34,656 uvicorn.error INFO Started server process [3624]
+2026-10-17 10:27:34,656 uvicorn.error INFO Waiting for application startup.
+2026-10-17 10:27:34,658 uvicorn.error INFO Application startup complete.
+2026-10-17 10:27:52,067 app.consultar INFO modulo=DASN tentativa=1 duracao=16.405 codigo=nao_optante
+2026-10-17 10:28:00,413 app.consultar INFO modulo=Optantes tentativa=1 duracao=8.346 codigo=ok
+2026-10-17 10:28:16,488 app.consultar INFO modulo=Optantes tentativa=1 duracao=15.363 codigo=ok
+2026-10-17 10:28:32,714 app.consultar INFO modulo=DASN tentativa=1 duracao=15.125 codigo=ok
+2026-10-17 10:28:40,681 app.consultar INFO modulo=Optantes tentativa=1 duracao=7.242 codigo=ok
+2026-10-17 10:28:49,163 app.consultar INFO modulo=DASN tentativa=1 duracao=7.726 codigo=nao_optante
+2026-10-17 10:28:51,183 app.consultar INFO modulo=Optantes tentativa=1 duracao=2.021 codigo=captcha_bloqueado
+2026-10-17 10:29:00,096 app.consultar INFO modulo=Optantes tentativa=2 duracao=6.897 codigo=ok
+2026-10-17 10:29:08,226 app.consultar INFO modulo=Optantes tentativa=1 duracao=7.620 codigo=ok
+2026-10-17 10:29:21,469 app.consultar INFO modulo=DASN tentativa=1 duracao=12.730 codigo=captcha_bloqueado
+2026-10-17 10:29:34,861 app.consultar INFO modulo=DASN tentativa=2 duracao=11.387 codigo=ok
+2026-10-17 10:29:45,024 app.consultar INFO modulo=Optantes tentativa=1 duracao=9.104 codigo=ok
+2026-10-17 10:29:55,413 app.consultar INFO modulo=DASN tentativa=1 duracao=9.636 codigo=ok
+2026-10-17 10:30:04,162 app.consultar INFO modulo=Optantes tentativa=1 duracao=8.283 codigo=ok
+2026-10-17 10:30:04,280 uvicorn.error INFO Shutting down
+2026-10-17 10:30:04,405 uvicorn.error INFO Waiting for application shutdown.
+2026-10-17 10:30:04,406 uvicorn.error INFO Application shutdown complete.
+2026-10-17 10:30:04,406 uvicorn.error INFO Finished server process [3624]

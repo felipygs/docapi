@@ -1,0 +1,140 @@
+{
+  "cnpj": "43996591000101",
+  "erro": {
+    "tipo": "DadosIncompletosError",
+    "mensagem": "Optantes - Eventos Futuros (Simples Nacional): limites do painel inválidos"
+  },
+  "estrutura": [
+    {
+      "titulo": "Identificação do Contribuinte - CNPJ Matriz",
+      "pai": {
+        "tag": "DIV",
+        "id": "conteudo",
+        "classe": "row"
+      },
+      "corpos": [
+        {
+          "display": "block",
+          "visibility": "visible",
+          "hidden": false,
+          "filhos": [
+            "SPAN",
+            "BR",
+            "INPUT",
+            "SPAN",
+            "BR",
+            "BR",
+            "SPAN"
+          ]
+        }
+      ],
+      "dentroMaisInfo": false
+    },
+    {
+      "titulo": "Situação Atual",
+      "pai": {
+        "tag": "DIV",
+        "id": "conteudo",
+        "classe": "row"
+      },
+      "corpos": [
+        {
+          "display": "block",
+          "visibility": "visible",
+          "hidden": false,
+          "filhos": [
+            "SPAN",
+            "BR",
+            "SPAN",
+            "BR",
+            "SPAN",
+            "BR",
+            "SPAN"
+          ]
+        }
+      ],
+      "dentroMaisInfo": false
+    },
+    {
+      "titulo": "Períodos Anteriores",
+      "pai": {
+        "tag": "DIV",
+        "id": "maisInfo",
+        "classe": "collapsing"
+      },
+      "corpos": [
+        {
+          "display": "block",
+          "visibility": "visible",
+          "hidden": false,
+          "filhos": [
+            "DIV",
+            "BR",
+            "SPAN",
+            "SPAN"
+          ]
+        }
+      ],
+      "dentroMaisInfo": true
+    },
+    {
+      "titulo": "Eventos Futuros (Simples Nacional)",
+      "pai": {
+        "tag": "DIV",
+        "id": "maisInfoComplementar",
+        "classe": ""
+      },
+      "corpos": [
+        {
+          "display": "block",
+          "visibility": "visible",
+          "hidden": false,
+          "filhos": [
+            "TABLE"
+          ]
+        }
+      ],
+      "dentroMaisInfo": true
+    },
+    {
+      "titulo": "Eventos Futuros (SIMEI)",
+      "pai": {
+        "tag": "DIV",
+        "id": "maisInfoComplementar",
+        "classe": ""
+      },
+      "corpos": [
+        {
+          "display": "block",
+          "visibility": "visible",
+          "hidden": false,
+          "filhos": [
+            "SPAN"
+          ]
+        }
+      ],
+      "dentroMaisInfo": true
+    },
+    {
+      "titulo": "Informações de Períodos como MEI Transportador Autônomo de Cargas",
+      "pai": {
+        "tag": "DIV",
+        "id": "maisInfoComplementar",
+        "classe": ""
+      },
+      "corpos": [
+        {
+          "display": "block",
+          "visibility": "visible",
+          "hidden": false,
+          "filhos": [
+            "SPAN",
+            "BR",
+            "BR"
+          ]
+        }
+      ],
+      "dentroMaisInfo": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+2026-10-17 10:05:10,747 uvicorn.error INFO Started server process [4184]
+2026-10-17 10:05:10,748 uvicorn.error INFO Waiting for application startup.
+2026-10-17 10:05:10,749 uvicorn.error INFO Application startup complete.
+2026-10-17 10:06:02,337 app.consultar INFO modulo=DASN tentativa=1 duracao=8.751 codigo=nao_optante
+2026-10-17 10:06:12,279 app.consultar INFO modulo=Optantes tentativa=1 duracao=9.941 codigo=dados_incompletos
+2026-10-17 10:06:23,343 app.consultar INFO modulo=Optantes tentativa=1 duracao=10.618 codigo=dados_incompletos
+2026-10-17 10:07:15,784 app.consultar INFO modulo=DASN tentativa=1 duracao=9.385 codigo=ok
+2026-10-17 10:07:23,880 app.consultar INFO modulo=Optantes tentativa=1 duracao=7.532 codigo=dados_incompletos
+2026-10-17 10:08:09,042 app.consultar INFO modulo=DASN tentativa=1 duracao=7.856 codigo=nao_optante
+2026-10-17 10:08:27,096 app.consultar INFO modulo=Optantes tentativa=1 duracao=18.054 codigo=dados_incompletos
+2026-10-17 10:08:43,459 app.consultar INFO modulo=Optantes tentativa=1 duracao=15.668 codigo=dados_incompletos
+2026-10-17 10:09:23,426 app.browser WARNING codigo=cleanup_timeout
+2026-10-17 10:09:39,129 app.consultar INFO modulo=DASN tentativa=1 duracao=12.643 codigo=ok
+2026-10-17 10:09:48,039 app.consultar INFO modulo=Optantes tentativa=1 duracao=8.345 codigo=dados_incompletos
+2026-10-17 10:10:46,819 app.consultar INFO modulo=DASN tentativa=1 duracao=17.373 codigo=ok
+2026-10-17 10:11:02,189 app.consultar INFO modulo=Optantes tentativa=1 duracao=14.802 codigo=dados_incompletos
+2026-10-17 10:11:02,223 uvicorn.error INFO Shutting down
+2026-10-17 10:11:02,335 uvicorn.error INFO Waiting for application shutdown.
+2026-10-17 10:11:02,336 uvicorn.error INFO Application shutdown complete.
+2026-10-17 10:11:02,336 uvicorn.error INFO Finished server process [4184]
