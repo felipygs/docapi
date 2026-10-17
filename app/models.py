@@ -1,4 +1,10 @@
-from pydantic import BaseModel, Field, field_validator
+from datetime import date, datetime
+from typing import Annotated
+
+from pydantic import (
+    BaseModel, BeforeValidator, Field, NaiveDatetime, StrictBool, StringConstraints,
+    field_validator, model_validator,
+)
 
 
 class ConsultaRequest(BaseModel):
@@ -154,54 +160,177 @@ class DasnResponse(BaseModel):
 
 # --- Optantes ---
 
-class Periodo(BaseModel):
-    """Periodo anterior de opcao/enquadramento."""
+_OptantesTexto = Annotated[str, StringConstraints(pattern=r"\S")]
+_OptantesCnpj = Annotated[str, StringConstraints(pattern=r"^[0-9]{14}$")]
 
-    data_inicial: str | None = Field(None, description="Data inicial do periodo (ISO 8601)", examples=["2022-03-21"])
-    data_final: str | None = Field(None, description="Data final do periodo (ISO 8601)", examples=["2025-12-31"])
-    detalhamento: str | None = Field(None, description="Motivo ou detalhamento do periodo")
+
+def _validar_data_optantes(valor):
+    # Nao aceitar timestamps/coercao numerica nem apagar datas invalidas.
+    if isinstance(valor, str):
+        if len(valor) != 10 or valor[4] != "-" or valor[7] != "-":
+            raise ValueError("Data de Optantes deve estar em YYYY-MM-DD")
+        return date.fromisoformat(valor)
+    if valor is not None and type(valor) is not date:
+        raise ValueError("Data de Optantes deve ser data civil ISO ou null")
+    return valor
+
+
+def _validar_horario_optantes(valor):
+    if isinstance(valor, str):
+        if len(valor) < 16 or valor[10] not in ("T", " "):
+            raise ValueError("Horario de Optantes exige data e hora locais")
+        return datetime.fromisoformat(valor)
+    if not isinstance(valor, datetime):
+        raise ValueError("Horario de Optantes deve ser datetime local sem fuso")
+    return valor
+
+
+_OptantesData = Annotated[date | None, BeforeValidator(_validar_data_optantes)]
+_OptantesHorario = Annotated[NaiveDatetime, BeforeValidator(_validar_horario_optantes)]
+
+
+class CampoAdicional(BaseModel):
+    """Coluna nao normalizada; lista preserva ordem e cabecalhos repetidos."""
+
+    coluna: str = Field(..., description="Cabecalho original da coluna adicional")
+    valor: str = Field(..., description="Valor integral da celula, inclusive vazio")
+
+
+class Tabela(BaseModel):
+    """Tabela generica sem inferir o significado de colunas desconhecidas."""
+
+    cabecalhos: list[str] = Field(..., description="Cabecalhos na ordem original, inclusive repetidos")
+    linhas: list[list[str]] = Field(..., description="Todas as linhas e celulas na ordem original")
+
+
+class ConteudoSecao(BaseModel):
+    """Conteudo integral de uma secao fiscal ainda nao normalizada."""
+
+    texto: str = Field(..., description="Texto integral da secao fiscal")
+    tabelas: list[Tabela] = Field(..., description="Todas as tabelas da secao, na ordem original")
+
+    def tem_conteudo(self) -> bool:
+        return bool(self.texto.strip() or any(tabela.linhas for tabela in self.tabelas))
+
+
+class DadoAdicional(ConteudoSecao):
+    """Secao fiscal desconhecida preservada sem repetir dados ja normalizados."""
+
+    secao: _OptantesTexto = Field(..., description="Titulo original da secao fiscal adicional")
+
+
+class Periodo(BaseModel):
+    """Periodo anterior do respectivo regime; null indica celula explicitamente vazia."""
+
+    data_inicial: _OptantesData = Field(..., description="Data inicial civil ISO; null para celula vazia", examples=["2025-01-01", None])
+    data_final: _OptantesData = Field(..., description="Data final civil ISO; null para celula vazia", examples=["2025-12-31", None])
+    detalhamento: str | None = Field(..., description="Motivo integral do periodo; null para celula vazia")
+    campos_adicionais: list[CampoAdicional] | None = Field(default_factory=list, exclude_if=lambda valor: not valor, description="Colunas adicionais ordenadas; omitido quando vazio")
+
+    @field_validator("detalhamento")
+    @classmethod
+    def normalizar_detalhamento(cls, valor: str | None) -> str | None:
+        return valor if valor is None or valor.strip() else None
+
+
+class EventoFuturo(BaseModel):
+    """Evento futuro independente da situacao atual do regime."""
+
+    descricao: _OptantesTexto = Field(..., description="Descricao integral do evento futuro", examples=["Exclusão de Ofício - Débitos"])
+    data_efeito: _OptantesData = Field(..., description="Data civil ISO de efeito; null para celula explicitamente vazia", examples=["2027-01-01", None])
+    campos_adicionais: list[CampoAdicional] | None = Field(default_factory=list, exclude_if=lambda valor: not valor, description="Colunas adicionais ordenadas; omitido quando vazio")
 
 
 class SimplesInfo(BaseModel):
-    """Situacao no Simples Nacional."""
+    """Situacao atual, historicos e eventos exclusivos do Simples Nacional."""
 
-    optante: bool = Field(False, description="True se atualmente optante pelo Simples Nacional")
-    data_desde: str | None = Field(None, description="Optante desde (ISO 8601)", examples=["2022-03-21"])
-    periodos_anteriores: list[Periodo] = Field([], description="Periodos anteriores de opcao pelo Simples")
-    eventos_futuros: str | None = Field(None, description="Eventos futuros programados (se houver)")
+    optante: StrictBool = Field(..., description="Opcao atual explicitamente reconhecida; evento futuro nao altera este fato")
+    situacao: _OptantesTexto = Field(..., description="Redacao integral da situacao atual na origem")
+    data_desde: _OptantesData = Field(..., description="Optante desde, em data civil ISO; null quando explicitamente ausente")
+    periodos_anteriores: list[Periodo] = Field(..., description="Historico exclusivo do Simples; [] somente para ausencia confirmada")
+    eventos_futuros: list[EventoFuturo] = Field(..., description="Eventos exclusivos do Simples, na ordem original; [] para ausencia confirmada, nunca texto/null")
 
 
 class SimeiInfo(BaseModel):
-    """Situacao no SIMEI (Sistema de Recolhimento do MEI)."""
+    """Situacao atual, historicos e eventos exclusivos do SIMEI."""
 
-    enquadrado: bool = Field(False, description="True se atualmente enquadrado no SIMEI")
-    data_desde: str | None = Field(None, description="Enquadrado desde (ISO 8601)")
-    periodos_anteriores: list[Periodo] = Field([], description="Periodos anteriores de enquadramento no SIMEI")
-    eventos_futuros: str | None = Field(None, description="Eventos futuros programados (se houver)")
+    enquadrado: StrictBool = Field(..., description="Enquadramento atual explicitamente reconhecido")
+    situacao: _OptantesTexto = Field(..., description="Redacao integral da situacao atual na origem")
+    data_desde: _OptantesData = Field(..., description="Enquadrado desde, em data civil ISO; null quando explicitamente ausente")
+    periodos_anteriores: list[Periodo] = Field(..., description="Historico exclusivo do SIMEI; [] somente para ausencia confirmada")
+    eventos_futuros: list[EventoFuturo] = Field(..., description="Eventos exclusivos do SIMEI, na ordem original; [] para ausencia confirmada, nunca texto/null")
+
+
+class MeiTransportador(BaseModel):
+    """Ausencia confirmada ou conteudo preservado sem esquema ficticio de periodos."""
+
+    possui_periodos: StrictBool = Field(..., description="False somente para ausencia explicita de periodos de MEI Transportador")
+    detalhes: ConteudoSecao | None = Field(None, exclude_if=lambda valor: valor is None or not valor.tem_conteudo(), description="Conteudo integral obrigatorio quando possui_periodos=true; omitido se vazio")
+
+    @model_validator(mode="after")
+    def validar_coerencia(self):
+        preenchido = self.detalhes is not None and self.detalhes.tem_conteudo()
+        if self.possui_periodos != preenchido:
+            raise ValueError("MEI Transportador: possui_periodos deve corresponder a detalhes preenchidos")
+        return self
 
 
 class OptantesResponse(BaseModel):
-    """Situacao no Simples Nacional e SIMEI."""
+    """Consulta integra de Optantes; listas vazias representam ausencia confirmada."""
 
-    simples_nacional: SimplesInfo = Field(..., description="Situacao no Simples Nacional")
-    simei: SimeiInfo = Field(..., description="Situacao no SIMEI")
-    alertas: list[str] = Field([], description="Alertas ou avisos capturados da pagina")
+    cnpj_consultado: _OptantesCnpj = Field(..., description="CNPJ consultado normalizado, com 14 digitos ASCII")
+    cnpj_matriz: _OptantesCnpj = Field(..., description="CNPJ da matriz informado pela origem, podendo diferir do consultado")
+    nome_empresarial: _OptantesTexto = Field(..., description="Nome empresarial integral informado pela origem")
+    consultado_em: _OptantesHorario = Field(..., description="Data/hora local da consulta na origem, sem fuso presumido")
+    abrange_todos_estabelecimentos: StrictBool = Field(..., description="Abrangencia explicitamente reconhecida na nota da origem")
+    simples_nacional: SimplesInfo = Field(..., description="Situacao, historicos e eventos exclusivos do Simples Nacional")
+    simei: SimeiInfo = Field(..., description="Situacao, historicos e eventos exclusivos do SIMEI")
+    mei_transportador: MeiTransportador = Field(..., description="Periodos de MEI Transportador, sem inferir colunas desconhecidas")
+    alertas: list[str] = Field(..., description="Mensagens visiveis distintas; [] quando nao ha alertas")
+    dados_adicionais: list[DadoAdicional] | None = Field(default_factory=list, exclude_if=lambda valor: not valor, description="Secoes fiscais desconhecidas; omitido quando vazio")
 
     model_config = {
         "json_schema_extra": {
             "examples": [{
+                "cnpj_consultado": "43996591000101",
+                "cnpj_matriz": "43996591000101",
+                "nome_empresarial": "ELIANE S MURTA CONSULTORIO ODONTOLOGICO",
+                "consultado_em": "2026-10-15T18:08:45",
+                "abrange_todos_estabelecimentos": True,
                 "simples_nacional": {
                     "optante": True,
-                    "data_desde": "2022-03-21",
-                    "periodos_anteriores": [],
-                    "eventos_futuros": None,
+                    "situacao": "Optante pelo Simples Nacional desde 01/01/2026",
+                    "data_desde": "2026-01-01",
+                    "periodos_anteriores": [
+                        {
+                            "data_inicial": "2025-01-01",
+                            "data_final": "2025-12-31",
+                            "detalhamento": "Excluída por Ato Administrativo praticado pela Receita Federal do Brasil",
+                        },
+                        {
+                            "data_inicial": "2024-01-01",
+                            "data_final": "2024-12-31",
+                            "detalhamento": "Excluída por Ato Administrativo praticado pela Receita Federal do Brasil",
+                        },
+                        {
+                            "data_inicial": "2021-10-25",
+                            "data_final": "2023-12-31",
+                            "detalhamento": "Excluída por Ato Administrativo praticado pela Receita Federal do Brasil",
+                        },
+                    ],
+                    "eventos_futuros": [{
+                        "descricao": "Exclusão de Ofício - Débitos",
+                        "data_efeito": "2027-01-01",
+                    }],
                 },
                 "simei": {
-                    "enquadrado": True,
-                    "data_desde": "2022-03-21",
+                    "enquadrado": False,
+                    "situacao": "NÃO enquadrado no SIMEI",
+                    "data_desde": None,
                     "periodos_anteriores": [],
-                    "eventos_futuros": None,
+                    "eventos_futuros": [],
                 },
+                "mei_transportador": {"possui_periodos": False},
                 "alertas": [],
             }],
         },
