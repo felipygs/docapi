@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from playwright.async_api import TimeoutError as PlaywrightTimeoutError
 from .models import (
     ConsultaRequest, ConsultaResponse,
-    CadastroResponse, DasnResponse, OptantesResponse,
+    CadastroResponse, DasnResponse, DasnResultado, OptantesResponse,
 )
 from .consultar import (
     consultar_mei,
@@ -34,9 +34,14 @@ no Simples Nacional direto dos portais da **Receita Federal do Brasil**.
 Aceita com ou sem mascara: `45.726.608/0001-36` ou `45726608000136`
 
 ### Tempo de resposta
-As consultas acessam portais externos da Receita Federal em tempo real e podem
-levar de **15 a 60 segundos** dependendo da carga dos servidores governamentais.
-A consulta completa (`/consultar`) executa os 3 modulos sequencialmente.
+As consultas acessam portais externos da Receita Federal em tempo real.
+DASN e Optantes permitem ate **3 tentativas**, com sessao nova e prazo de
+**180 segundos por modulo**, mais um prazo curto de liberacao do navegador.
+Falhas transitorias e mensagens de bloqueio Captcha permitem novas submissoes
+normais dentro desses limites, sem resolver desafios automaticamente. CNPJ
+invalido e dados inconsistentes encerram a consulta. Falha nao significa
+ausencia de pendencias. A consulta completa executa os modulos sequencialmente,
+sem repetir os anteriores que ja terminaram. Cadastro CNPJ tem fluxo proprio.
 
 ### Migracao do contrato de Optantes — 2.0.0 (quebra de compatibilidade)
 O novo contrato substitui a resposta anterior em `POST /consultar/optantes` e no
@@ -158,13 +163,16 @@ async def consultar_cnpj(req: ConsultaRequest):
 
 @app.post(
     "/consultar/dasn",
-    response_model=DasnResponse,
+    response_model=DasnResultado,
     responses=_ERROR_RESPONSES,
     tags=["Consulta Individual"],
     summary="Consultar declaracoes DASN-SIMEI",
     description="Retorna a lista de declaracoes anuais DASN-SIMEI do contribuinte, "
                 "incluindo status (apresentada, pendente), ano-calendario, "
-                "data de apresentacao e situacao de baixa.",
+                "data de apresentacao e situacao de baixa. Quando a origem responde 33001, "
+                "cruza Optantes: ausencia de enquadramento e historico SIMEI retorna status "
+                "nao_optante_simei_confirmado_por_optantes, com declaracoes e pendentes null "
+                "(nao consultadas). Divergencia ou falha da conferencia gera erro, nunca ausencia de pendencias.",
     response_description="Declaracoes DASN-SIMEI do contribuinte",
 )
 async def consultar_dasn(req: ConsultaRequest):

@@ -11,6 +11,92 @@ from test_optantes_parser import BrowserOffline, PaginaOffline, fixture, TITULOS
 
 
 class TestOptantesValidation(BrowserOffline):
+    async def test_paineis_em_mais_info_complementar_preservam_resultados(self):
+        # Estrutura observada na captura real de 17/10/2026: os painéis
+        # continuam dentro de #maisInfo, sob um contêiner intermediário.
+        html = await self.html_mutado('''() => {
+            const maisInfo = document.querySelector('#maisInfo');
+            const complemento = document.createElement('div');
+            complemento.id = 'maisInfoComplementar';
+            [...maisInfo.querySelectorAll(':scope > .panel')].slice(1)
+                .forEach(panel => complemento.append(panel));
+            maisInfo.append(complemento);
+        }''')
+        resultado = await self.consultar(html)
+        self.assertEqual(len(resultado['simples_nacional']['periodos_anteriores']), 3)
+        self.assertEqual(resultado['simei']['periodos_anteriores'], [])
+        self.assertEqual(resultado['simples_nacional']['eventos_futuros'], [
+            {'descricao': 'Exclusão de Ofício - Débitos', 'data_efeito': '2027-01-01'},
+        ])
+        self.assertEqual(resultado['simei']['eventos_futuros'], [])
+        self.assertEqual(resultado['mei_transportador'], {'possui_periodos': False})
+        self.assertNotIn('dados_adicionais', resultado)
+
+    async def test_historico_ibs_cbs_separado_dos_regimes_obrigatorios(self):
+        rotulo = 'Opções pelo Regime Regular IBS/CBS em Períodos Anteriores:'
+        for posicao, registros in (('antes', False), ('entre', False), ('depois', False), ('depois', True)):
+            with self.subTest(posicao=posicao, registros=registros):
+                html = await self.html_mutado('''({posicao, registros, rotulo}) => {
+                    const body = document.querySelector('#maisInfo > .panel .panel-body');
+                    const extra = document.createElement('div');
+                    extra.innerHTML = '<span>' + rotulo + '</span>' + (registros
+                        ? '<table><thead><tr><th>Data Inicial</th><th>Data Final</th><th>Detalhamento</th></tr></thead><tbody><tr><td>01/01/2026</td><td>31/12/2026</td><td>REGISTRO_IBS_CBS</td></tr></tbody></table>'
+                        : '<span>Informação indisponível</span>');
+                    if (posicao === 'antes') body.prepend(extra);
+                    else if (posicao === 'entre') body.querySelector(':scope > span:last-child').before(extra);
+                    else body.append(extra);
+                }''', arg={'posicao': posicao, 'registros': registros, 'rotulo': rotulo})
+                resultado = await self.consultar(html)
+                self.assertEqual(len(resultado['simples_nacional']['periodos_anteriores']), 3)
+                self.assertEqual(resultado['simei']['periodos_anteriores'], [])
+                adicionais = resultado['dados_adicionais']
+                self.assertEqual(len(adicionais), 1)
+                self.assertEqual(adicionais[0]['secao'], 'Períodos Anteriores')
+                self.assertIn(rotulo, adicionais[0]['texto'])
+                if registros:
+                    self.assertEqual(adicionais[0]['tabelas'][0]['linhas'], [
+                        ['01/01/2026', '31/12/2026', 'REGISTRO_IBS_CBS'],
+                    ])
+                else:
+                    self.assertIn('Informação indisponível', adicionais[0]['texto'])
+
+    async def test_ausencia_ibs_cbs_nao_confirma_historico_simei_incompleto(self):
+        for conteudo in ('', 'Informação indisponível'):
+            with self.subTest(conteudo=conteudo):
+                html = await self.html_mutado('''conteudo => {
+                    const body = document.querySelector('#maisInfo > .panel .panel-body');
+                    body.querySelector(':scope > span:last-child').innerHTML =
+                        'Enquadramentos no SIMEI em Períodos Anteriores: <span>' + conteudo + '</span>';
+                    body.insertAdjacentHTML('beforeend', '<div><span>Opções pelo Regime Regular IBS/CBS em Períodos Anteriores:</span><span>Não Existem</span></div>');
+                }''', arg=conteudo)
+                await self.erro(html, 'Períodos Anteriores (SIMEI)')
+
+    async def test_painel_complementar_fora_de_mais_info_continua_invalido(self):
+        html = await self.html_mutado('''() => {
+            const maisInfo = document.querySelector('#maisInfo');
+            const complemento = document.createElement('div');
+            complemento.id = 'maisInfoComplementar';
+            complemento.append(maisInfo.querySelectorAll(':scope > .panel')[1]);
+            document.querySelector('#conteudo').append(complemento);
+        }''')
+        await self.erro(html, 'Eventos Futuros (Simples Nacional)')
+
+    async def test_situacao_ibs_cbs_adicional_nao_contamina_simei(self):
+        html = await self.html_mutado('''() => {
+            const panel = [...document.querySelectorAll('.panel')].find(p => p.querySelector('h3')?.textContent.trim() === 'Situação Atual');
+            panel.querySelector('.panel-body').insertAdjacentHTML('beforeend', '<p>Situação no Regime Regular do IBS: Informação indisponível</p><p>Situação no Regime Regular da CBS: Informação indisponível</p>');
+        }''')
+        result = await self.consultar(html)
+        self.assertFalse(result['simei']['enquadrado'])
+        self.assertEqual(result['simei']['situacao'], 'NÃO enquadrado no SIMEI')
+        additional = [d for d in result['dados_adicionais'] if d['secao'] == 'Situação Atual']
+        self.assertEqual(len(additional), 1)
+        self.assertIn('Situação no Regime Regular do IBS: Informação indisponível', additional[0]['texto'])
+        self.assertIn('Situação no Regime Regular da CBS: Informação indisponível', additional[0]['texto'])
+
+    async def test_matriz_de_outra_raiz_nao_e_sucesso(self):
+        await self.erro(fixture('eliane_sintetica.html'), 'identidade', cnpj='57435953000108')
+
     async def html_mutado(self, js, nome="eliane_sintetica.html", arg=None):
         await self.page.set_content(fixture(nome))
         await self.page.evaluate(js, arg)
@@ -110,11 +196,11 @@ class TestOptantesValidation(BrowserOffline):
         self.assertIn("Três", d["texto"])
         self.assertNotIn("SECRETO", d["texto"])
         self.assertEqual(d["tabelas"], [{"cabecalhos": ["Extra", "Extra"], "linhas": [["Um", "Dois"], ["", "Três"]]}])
-        normal = await self.consultar(fixture("barbara.html"))
+        normal = await self.consultar(fixture("barbara.html"), '53987789000182')
         self.assertNotIn("dados_adicionais", normal)
 
     async def test_transportador_vazio_real_e_preenchido_sintetico_lossless(self):
-        self.assertEqual((await self.consultar(fixture("barbara.html")))["mei_transportador"], {"possui_periodos": False})
+        self.assertEqual((await self.consultar(fixture("barbara.html"), '53987789000182'))["mei_transportador"], {"possui_periodos": False})
         # SINTÉTICO: não afirma conhecer o esquema real de Transportador preenchido.
         html = await self.html_mutado("""() => {
             document.querySelector('#maisInfo > .panel:last-child .panel-body').innerHTML = '<p>Períodos sintéticos como MEI Transportador</p><table><thead><tr><th>Registro</th><th>Informação</th></tr></thead><tbody><tr><td>01/01/2024 a 31/12/2024</td><td>Conteúdo integral</td></tr></tbody></table>';
@@ -196,7 +282,7 @@ class TestOptantesValidation(BrowserOffline):
                 html = await self.html_mutado("""estilo => {
                     document.querySelector('#maisInfo > .panel .panel-body > span span').style = estilo;
                 }""", nome='barbara.html', arg=estilo)
-                await self.erro(html, 'Períodos Anteriores')
+                await self.erro(html, 'Períodos Anteriores', cnpj='53987789000182')
 
     async def test_regressao_historico_ignora_descendentes_ocultos_com_contexto_css(self):
         html = await self.html_mutado("""() => {

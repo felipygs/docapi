@@ -1,5 +1,5 @@
 from datetime import date, datetime
-from typing import Annotated
+from typing import Annotated, Literal
 
 from pydantic import (
     BaseModel, BeforeValidator, Field, NaiveDatetime, StrictBool, StringConstraints,
@@ -159,6 +159,24 @@ class DasnResponse(BaseModel):
 
 
 # --- Optantes ---
+
+class DasnNaoOptanteResponse(BaseModel):
+    """Resposta 33001 corroborada por Optantes; obrigações não consultadas."""
+
+    status: Literal['nao_optante_simei_confirmado_por_optantes']
+    codigo_origem: Literal['33001']
+    cnpj: str
+    razao_social: str
+    situacao_declaracoes: Literal['nao_consultadas']
+    declaracoes: None
+    pendentes: None
+    mei_baixada: None
+    data_baixa: None
+    optantes_consultado_em: NaiveDatetime
+    mensagem: str
+
+
+DasnResultado = DasnNaoOptanteResponse | DasnResponse
 
 _OptantesTexto = Annotated[str, StringConstraints(pattern=r"\S")]
 _OptantesCnpj = Annotated[str, StringConstraints(pattern=r"^[0-9]{14}$")]
@@ -342,5 +360,5 @@ class ConsultaResponse(BaseModel):
 
     cnpj: str = Field(..., description="CNPJ consultado", examples=["45.726.608/0001-36"])
     cadastro: CadastroResponse = Field(..., description="Dados cadastrais do CNPJ")
-    dasn: DasnResponse = Field(..., description="Declaracoes DASN-SIMEI")
+    dasn: DasnResultado = Field(..., description="Declaracoes ou resposta 33001 corroborada; null nao confirma ausencia de pendencias")
     optantes: OptantesResponse = Field(..., description="Situacao no Simples Nacional e SIMEI")

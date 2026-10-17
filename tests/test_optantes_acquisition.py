@@ -18,6 +18,25 @@ AJAX = "https://optantes.test/consultaoptantes/Home/AjaxMaisInfo?cnpjHdn=4399659
 
 
 class TestOptantesAcquisition(BrowserOffline):
+    async def test_validacao_campo_cnpj_rejeitado_e_400(self):
+        html = '''<html><body><form><span class="field-validation-error"
+        data-valmsg-for="Cnpj">Informe um CNPJ válido.</span></form></body></html>'''
+        with self.assertRaises(HTTPException) as raised:
+            await self.executar(html)
+        self.assertEqual(raised.exception.status_code, 400)
+
+    async def test_rejeicao_inicial_visivel_e_502_em_vez_de_timeout(self):
+        html = '''<html><body><form id="consultarForm">
+        <div class="alert alert-danger"><div class="validation-summary-errors"><ul>
+        <li>Impedido por proteção Captcha. Erro na validação do Token. SEGREDO=TOKEN</li>
+        </ul></div></div></form></body></html>'''
+        with self.assertRaises(HTTPException) as raised:
+            await self.executar(html)
+        self.assertEqual(raised.exception.status_code, 502)
+        self.assertIn('consulta inicial', raised.exception.detail)
+        self.assertNotIn('SEGREDO', raised.exception.detail)
+        self.assertNotIn('TOKEN', raised.exception.detail)
+
     async def asyncTearDown(self):
         self.assertEqual(self.bloqueadas, [])
         self.assertTrue(all(url == AJAX for url in self.requests), self.requests)

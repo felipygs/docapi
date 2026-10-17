@@ -10,6 +10,7 @@ from datetime import datetime
 from pydantic import ValidationError
 
 from ..models import OptantesResponse
+from ..errors import DadosIncompletosError, IdentidadeDivergenteError
 from .utils import ALERT_SELECTORS
 
 IDENTIFICACAO = "Identificação do Contribuinte - CNPJ Matriz"
@@ -113,18 +114,20 @@ _JS_SNAPSHOT = r"""({rotulos, alertSelectors}) => {
         const body = bodies.length === 1 ? bodies[0] : null;
         const snap = {
             titulo: titles.length === 1 ? space(titles[0].textContent) : '',
-            complementar: panel.parentElement?.id === 'maisInfo',
+            complementar: panel.closest('#maisInfo') !== null,
             conteudo: body ? content(body) : null,
         };
         if (body && norm(snap.titulo) === norm('Períodos Anteriores')) {
             // Ranges de texto dentro DESTE corpo. Incluem filhos do rótulo
             // (Não Existem) e irmãos seguintes até o próximo rótulo fiscal.
+            // IBS/CBS delimita uma seção adicional, sem virar histórico SIMEI.
+            const labels = [...rotulos, 'Opções pelo Regime Regular IBS/CBS em Períodos Anteriores:'];
             const walker = document.createTreeWalker(body, NodeFilter.SHOW_TEXT);
             const starts = [];
             while (walker.nextNode()) {
                 const n = walker.currentNode;
                 if (n.parentElement.closest('table,script,style,button')) continue;
-                rotulos.forEach((label, index) => {
+                labels.forEach((label, index) => {
                     const value = norm(n.textContent);
                     if (value.startsWith(norm(label))) {
                         const colon = n.textContent.indexOf(':');
@@ -132,17 +135,22 @@ _JS_SNAPSHOT = r"""({rotulos, alertSelectors}) => {
                     }
                 });
             }
+            const intervalContent = (start, offset) => {
+                const next = starts[starts.indexOf(start) + 1];
+                const range = document.createRange();
+                range.setStart(start.node, offset);
+                if (next) range.setEnd(next.node, 0); else range.setEnd(body, body.childNodes.length);
+                return content(range.cloneContents());
+            };
             snap.historicos = rotulos.map((_, index) => {
                 const matches = starts.filter(s => s.index === index);
                 if (matches.length !== 1) return null;
-                const start = matches[0];
-                const next = starts[starts.indexOf(start) + 1];
-                const range = document.createRange();
-                range.setStart(start.node, start.offset);
-                if (next) range.setEnd(next.node, 0); else range.setEnd(body, body.childNodes.length);
-                return content(range.cloneContents());
+                return intervalContent(matches[0], matches[0].offset);
             });
-            snap.limites_validos = starts.length === rotulos.length && new Set(starts.map(s => s.index)).size === rotulos.length;
+            snap.adicionais_historicos = starts.filter(s => s.index >= rotulos.length)
+                .map(start => intervalContent(start, 0));
+            const required = starts.filter(s => s.index < rotulos.length);
+            snap.limites_validos = required.length === rotulos.length && new Set(required.map(s => s.index)).size === rotulos.length;
             if (snap.limites_validos) {
                 const prefix = document.createRange();
                 prefix.setStart(body, 0);
@@ -177,7 +185,7 @@ def normalizar(texto: str) -> str:
 def falha(secao: str, campo: str) -> None:
     # Somente nomes de campos controlados pelo parser; nunca ecoar HTML, URL,
     # mensagens Ajax, cookies, tokens ou inputs rejeitados pelo Pydantic.
-    raise RuntimeError(f"Optantes - {secao}: {campo}")
+    raise DadosIncompletosError(f"Optantes - {secao}: {campo}")
 
 
 async def adquirir_snapshot(page) -> dict:
@@ -297,6 +305,8 @@ def transformar_snapshot(snapshot: dict, cnpj_consultado: str) -> dict:
     nome = re.search(r"Nome Empresarial:\s*(.*)$", identificacao)
     if cnpj is None or nome is None or not nome[1].strip():
         falha("identificação", "CNPJ matriz ou nome empresarial inválido")
+    if re.fullmatch(r'[0-9]{14}', cnpj_consultado) and re.sub(r'[^0-9]', '', cnpj[1])[:8] != cnpj_consultado[:8]:
+        raise IdentidadeDivergenteError('Optantes - identidade: CNPJ matriz de outra empresa')
     nota = normalizar(identificacao[cnpj.end():nome.start()])
     notas = {
         "a opcao pelo simples nacional e/ou simei abrange todos os estabelecimentos da empresa": True,
@@ -315,6 +325,13 @@ def transformar_snapshot(snapshot: dict, cnpj_consultado: str) -> dict:
     except ValueError:
         falha("Data da consulta", "horário inválido")
     situacao = _painel(snapshot, SITUACAO)["conteudo"]["texto"]
+    # Novos regimes aparecem depois do SIMEI no mesmo painel. Preservá-los
+    # integralmente, sem interpretar seu estado como parte do SIMEI.
+    adicional_situacao = None
+    novo_regime = re.search(r'\s+Situação no Regime Regular (?:do IBS|da CBS):', situacao, re.I)
+    if novo_regime:
+        adicional_situacao = situacao[novo_regime.start():].strip()
+        situacao = situacao[:novo_regime.start()].strip()
     match = re.fullmatch(r"Situação no Simples Nacional:\s*(.*?)\s*Situação no SIMEI:\s*(.*)", situacao, re.I)
     if match is None:
         falha(SITUACAO, "rótulos obrigatórios ausentes ou ambíguos")
@@ -324,10 +341,14 @@ def transformar_snapshot(snapshot: dict, cnpj_consultado: str) -> dict:
     if not history.get("limites_validos"):
         falha(HISTORICOS, "rótulos ausentes ou duplicados")
     adicionais = []
+    if adicional_situacao:
+        adicionais.append({'secao': SITUACAO, 'texto': adicional_situacao, 'tabelas': []})
     antes = history.get("antes_historicos")
     if antes and (antes["texto"] or antes["tabelas"]):
         _validar_estado(antes, HISTORICOS)
         adicionais.append({"secao": HISTORICOS, **_generico(antes, HISTORICOS)})
+    for conteudo_adicional in history.get("adicionais_historicos", []):
+        adicionais.append({"secao": HISTORICOS, **_generico(conteudo_adicional, HISTORICOS)})
     for i, (regime, dados, titulo) in enumerate((("Simples Nacional", simples, EVENTOS_SIMPLES), ("SIMEI", simei, EVENTOS_SIMEI))):
         dados["periodos_anteriores"] = _lista(history["historicos"][i], f"{HISTORICOS} ({regime})", {"Data Inicial": "data_inicial", "Data Final": "data_final", "Detalhamento": "detalhamento"}, {"data_inicial", "data_final"}, adicionais)
         dados["eventos_futuros"] = _lista(_painel(snapshot, titulo, True)["conteudo"], titulo, {"Descrição do Evento": "descricao", "Data Efeito": "data_efeito"}, {"data_efeito"}, adicionais)

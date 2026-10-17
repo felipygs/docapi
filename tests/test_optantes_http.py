@@ -17,6 +17,24 @@ from test_optantes_models import eliane, conteudo
 
 
 class TestOptantesHTTP(unittest.TestCase):
+    def test_http_dasn_33001_preserva_null_e_status(self):
+        payload = {
+            'status': 'nao_optante_simei_confirmado_por_optantes',
+            'codigo_origem': '33001', 'cnpj': '43996591000101',
+            'razao_social': 'EMPRESA EXEMPLO', 'situacao_declaracoes': 'nao_consultadas',
+            'declaracoes': None, 'pendentes': None, 'mei_baixada': None,
+            'data_baixa': None, 'optantes_consultado_em': '2026-10-17T00:42:08',
+            'mensagem': 'Declaracoes e pendencias nao verificadas.',
+        }
+        with patch('app.api.consultar_apenas_dasn', AsyncMock(return_value=payload)):
+            status, body = self.post('/consultar/dasn')
+        self.assertEqual(status, 200)
+        self.assertEqual(body, payload)
+        with patch('app.api.consultar_mei', AsyncMock(return_value={**self.agregado(eliane()), 'dasn': payload})):
+            status, body = self.post('/consultar')
+        self.assertEqual(status, 200)
+        self.assertEqual(body['dasn'], payload)
+
     @classmethod
     def setUpClass(cls):
         cls.socket = socket.socket()
@@ -149,7 +167,8 @@ class TestOptantesHTTP(unittest.TestCase):
             status, body = self.post('/consultar')
         self.assertEqual(status, 502)
         self.assertEqual(body, {'detail': 'Optantes - SIMEI: painel ausente'})
-        browser.close.assert_awaited_once()
+        # Cadastro, DASN e Optantes agora têm sessões independentes.
+        self.assertEqual(browser.close.await_count, 3)
         playwright_context.__aexit__.assert_awaited_once()
 
     def test_http_cnpj_e_dasn_continuam_serializando_como_antes(self):
