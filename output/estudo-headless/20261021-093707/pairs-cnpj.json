@@ -1,0 +1,26 @@
+[
+  {
+    "route": "/consultar/cnpj",
+    "cnpj": "37482317000111",
+    "rounds": [
+      {
+        "round": 1,
+        "control": "consultar_cnpj_37482317000111_r1_control",
+        "headless": "consultar_cnpj_37482317000111_r1_headless",
+        "reasons": []
+      }
+    ]
+  },
+  {
+    "route": "/consultar/cnpj",
+    "cnpj": "00000000000191",
+    "rounds": [
+      {
+        "round": 1,
+        "control": "consultar_cnpj_00000000000191_r1_control",
+        "headless": "consultar_cnpj_00000000000191_r1_headless",
+        "reasons": []
+      }
+    ]
+  }
+]

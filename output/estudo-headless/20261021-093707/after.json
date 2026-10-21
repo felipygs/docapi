@@ -1,0 +1,247 @@
+{
+  "time": "2026-10-21T10:12:13.212201-03:00",
+  "python": "3.14.7 (tags/v3.14.7:823f032, Aug  5 2026, 10:51:32) [MSC v.1944 64 bit (AMD64)]",
+  "playwright": "1.64.0",
+  "chrome": "141.0.7390.109",
+  "commit": "73581723aea2eb0f4ee5e7745e085477afcfd518",
+  "git_status": " M .env.example\n M README.md\n M app/api.py\n M app/captcha.py\n M app/config.py\n M app/consultar.py\n M app/scrapers/cnpj.py\n M main.py\n M requirements.txt\n M tests/test_consultar_recovery.py\n M tests/test_optantes_http.py\n?? docs/diagnostico-consulta-completa-2026-10-20.md\n?? docs/validacao-cnpj-2026-10-17.md\n?? openspec/changes/study-headless-browser/\n?? output/diagnostico_completa_45726608000136.json\n?? output/diagnostico_completa_http_45726608000136.json\n?? output/estudo-headless/\n?? output/homologacao_cnpj_20261017/\n?? output/server.before-diagnostico.stderr.log\n?? output/server.before-diagnostico.stdout.log\n?? output/server.stderr.log\n?? output/server.stdout.log\n?? output/testes-consulta-completa.log\n?? output/validacao_completa_45726608000136.json\n?? tests/fixtures/cnpj/\n?? tests/test_cnpj.py\n?? tests/test_cnpj_acquisition.py\n?? tests/test_server_logging.py\n",
+  "hashes": {
+    ".env.example": "44f42b5ba334d23bce801194f40061cd74789901df42ee815c8dcc0c684679e4",
+    ".gitignore": "0ef4c29f5ff27990c5da54e15fc628f7b1b5b9d8e71758a32f51265aad17c4be",
+    "app/__init__.py": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+    "app/api.py": "b0429fe5f0e4d1c5aae60a879bd7bd1d9b74490394b0b077c531bc12183521ab",
+    "app/browser.py": "d740248b73097622dcc9736c7152ab4c68a52f52db1069ed22db1bd8f9ded2c5",
+    "app/captcha.py": "c4d18e5e0165dcefd0ade31093174ef6ed972b49102450f35be6613c7b2b5665",
+    "app/config.py": "bfd3acc2f706379563d25835b2e5eb25c9f5f86872a875d87f85f28596c3e530",
+    "app/consultar.py": "fcf9df324b51c46ec073fcfbeae63cfae7c120cb3eb26f420c9d168758dd43f4",
+    "app/errors.py": "f6b0f418756bf1d5971e582de6cf29fb1ff63ca9521655a874b8587c804a191e",
+    "app/models.py": "f09f66c72343979d423e7ca30a99a16c8d2c3a15e3c624863bb43aee628a6fa8",
+    "app/scrapers/__init__.py": "ed40947d149219cc9a197e46c38557ab97963f2805f2bdf5786effbf31a2daff",
+    "app/scrapers/cnpj.py": "f5fa67f88b02b8d9d16c4310f9318e437d81d0f1596a587b7f7297ce7f21ef73",
+    "app/scrapers/dasn.py": "a0c89ae1900d780a686e21f05414f2d757f32a9c57b2b19aa9b2e7bcc593688b",
+    "app/scrapers/optantes.py": "13963570aac5d48e7dac260403dad5e06529d51fb05d27ad6e43837bac0b8c80",
+    "app/scrapers/optantes_parser.py": "0877577e254f0081ad8800c28c7d2335ed0e702798b70aad2ac39d2b6c7058c2",
+    "app/scrapers/parsers.py": "e8620de8bd446063a1f4eccf295cd0c3d43f2def8ff3f41e4ef75c7257413d17",
+    "app/scrapers/utils.py": "2de37b73a6abaed03c93de68f2c938f05f7ea44d45c8b7ff2560b6f841ebd6d0",
+    "Dockerfile": "cc269eead952d3b3597586f41f277b40da357c0dcfea0b25f1e0e3b260b652c7",
+    "main.py": "33dabc35f62f44f99c5b6fc0a90d8d3ae4b2414a0e8bc0000a9486bf6fe7ed01",
+    "requirements.txt": "4fe3504ff2df72ab36c9764d340eb398f9576e2572a96535842a0e8a3c6dc8aa",
+    "tests/fixtures/cnpj/cadastro.json": "86b375d000213ce5153f513f8bde3101239896aae7f48f3ea24e72f04ef1e10c",
+    "tests/fixtures/optantes/barbara.html": "8d45942f115768cfae3c790daa5bb97edb449dad9f0b3b97c4f0f854912cb901",
+    "tests/fixtures/optantes/eliane_sintetica.html": "24af75032847c7ab6cc6e92e8c54fb2c55e261cff9c02af0aae607a4b6d03eb7",
+    "tests/fixtures/optantes/ivanusa.html": "bfa801d1129b82048eb3b4f86f5db3f05b91f3d9e43859b993834c2b17de0c49",
+    "tests/test_cnpj.py": "dc1ec72e061dbc5b7cd74df1ca6fbb173d9ff249457acc4b9fa49d0ce889d711",
+    "tests/test_cnpj_acquisition.py": "f4c9471ff676578281a13d9b0316fa0c137e2acdd45b954d5f0aa49d5c81598d",
+    "tests/test_consultar_recovery.py": "457b18e6c8dfd2a7da0715b907cad998f2a5301262bbf156cf5fc8c755d7c2ca",
+    "tests/test_dasn_acquisition.py": "0ce778f3d7f87c36b2280005a05fd88444fffec3f1aaa2a36fc5279c7606051c",
+    "tests/test_dasn_integrity.py": "d3fe43e5561f0dfdf8e0fff32d0734efe75088a06629a4fd8ad2e56e9a1e60df",
+    "tests/test_dasn_outcome.py": "63b15a78d643b80eccae0a4f7eac15e99d1d513c3d13f44e0dabf45b03acd989",
+    "tests/test_optantes_acquisition.py": "bb17d3b27251cbbd19cf346e6085cff79f920f0abd496a5a78ce83646e1299cb",
+    "tests/test_optantes_http.py": "690a691cf12fcab6cf3a6248defe7c65b084d8c3374d94234644ab388f15c808",
+    "tests/test_optantes_models.py": "fb74b3867e57715458d9002c6aa0d07dc97931f9989c5f068244f95b38f3e430",
+    "tests/test_optantes_parser.py": "2cabc85e6d996ebc9aac3864d2ba2fa2764a975a965328795b2b701e403fb146",
+    "tests/test_optantes_validation.py": "382edc180660dd7f583a2af1d32fb6f4597021da2cd7192e3829c66c4b4cbca5",
+    "tests/test_server_logging.py": "97418bff180eb5a59be357223a1b246cc171b2aa8d54d85c715fdd6bb75a0358"
+  },
+  "processes": [
+    {
+      "ProcessId": 10796,
+      "ParentProcessId": 13720,
+      "Name": "node.exe",
+      "CreationDate": "/Date(1792583157281)/"
+    },
+    {
+      "ProcessId": 14560,
+      "ParentProcessId": 14580,
+      "Name": "node.exe",
+      "CreationDate": "/Date(1792583294194)/"
+    },
+    {
+      "ProcessId": 10780,
+      "ParentProcessId": 14576,
+      "Name": "node.exe",
+      "CreationDate": "/Date(1792583295608)/"
+    },
+    {
+      "ProcessId": 6824,
+      "ParentProcessId": 7664,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792584149398)/"
+    },
+    {
+      "ProcessId": 4272,
+      "ParentProcessId": 6824,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792584149572)/"
+    },
+    {
+      "ProcessId": 2556,
+      "ParentProcessId": 6824,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792584149946)/"
+    },
+    {
+      "ProcessId": 8076,
+      "ParentProcessId": 6824,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792584149946)/"
+    },
+    {
+      "ProcessId": 2128,
+      "ParentProcessId": 6824,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792584149972)/"
+    },
+    {
+      "ProcessId": 2932,
+      "ParentProcessId": 6824,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792584150184)/"
+    },
+    {
+      "ProcessId": 9768,
+      "ParentProcessId": 6824,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792584195419)/"
+    },
+    {
+      "ProcessId": 19516,
+      "ParentProcessId": 16804,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585053016)/"
+    },
+    {
+      "ProcessId": 6100,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585053063)/"
+    },
+    {
+      "ProcessId": 9500,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585053332)/"
+    },
+    {
+      "ProcessId": 6556,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585053341)/"
+    },
+    {
+      "ProcessId": 19004,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585053369)/"
+    },
+    {
+      "ProcessId": 20280,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585056576)/"
+    },
+    {
+      "ProcessId": 8252,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585060338)/"
+    },
+    {
+      "ProcessId": 22844,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585067237)/"
+    },
+    {
+      "ProcessId": 22900,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585067510)/"
+    },
+    {
+      "ProcessId": 23352,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585071373)/"
+    },
+    {
+      "ProcessId": 22192,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585073882)/"
+    },
+    {
+      "ProcessId": 4192,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585079779)/"
+    },
+    {
+      "ProcessId": 13708,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585165269)/"
+    },
+    {
+      "ProcessId": 20820,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585205572)/"
+    },
+    {
+      "ProcessId": 7684,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585208211)/"
+    },
+    {
+      "ProcessId": 19232,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585340296)/"
+    },
+    {
+      "ProcessId": 23372,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585342176)/"
+    },
+    {
+      "ProcessId": 10336,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792585378173)/"
+    },
+    {
+      "ProcessId": 13612,
+      "ParentProcessId": 6824,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792587081487)/"
+    },
+    {
+      "ProcessId": 3592,
+      "ParentProcessId": 6824,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792588234154)/"
+    },
+    {
+      "ProcessId": 24080,
+      "ParentProcessId": 19516,
+      "Name": "chrome.exe",
+      "CreationDate": "/Date(1792588245794)/"
+    },
+    {
+      "ProcessId": 16744,
+      "ParentProcessId": 10380,
+      "Name": "python.exe",
+      "CreationDate": "/Date(1792588323339)/"
+    },
+    {
+      "ProcessId": 20132,
+      "ParentProcessId": 16744,
+      "Name": "python.exe",
+      "CreationDate": "/Date(1792588323356)/"
+    }
+  ],
+  "listeners": []
+}

@@ -1,0 +1,3 @@
+{"t": 1792586599.150732, "kind": "worker_start", "pid": 19420, "mode": "control", "port": 60734}
+{"t": 1792586599.7010481, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
+{"t": 1792586601.6483378, "kind": "worker_end"}

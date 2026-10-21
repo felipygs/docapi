@@ -1,0 +1,111 @@
+{
+  "case": "consultar_optantes_12309631000176_r1_control",
+  "mode": "control",
+  "route": "/consultar/optantes",
+  "cnpj": "12309631000176",
+  "round": 1,
+  "started": "2026-10-21T10:05:53.510107-03:00",
+  "duration_seconds": 8.902,
+  "http_status": 200,
+  "data": {
+    "cnpj_consultado": "12309631000176",
+    "cnpj_matriz": "12309631000176",
+    "nome_empresarial": "12.309.631 FRANCISCO DAS CHAGAS PEREIRA DE QUEIROZ",
+    "consultado_em": "2026-10-21T10:06:02",
+    "abrange_todos_estabelecimentos": true,
+    "simples_nacional": {
+      "optante": true,
+      "situacao": "Optante pelo Simples Nacional desde 01/01/2025",
+      "data_desde": "2025-01-01",
+      "periodos_anteriores": [
+        {
+          "data_inicial": "2024-01-01",
+          "data_final": "2024-12-31",
+          "detalhamento": "Excluída por Ato Administrativo praticado pela Receita Federal do Brasil"
+        },
+        {
+          "data_inicial": "2010-07-30",
+          "data_final": "2023-12-31",
+          "detalhamento": "Excluída por Ato Administrativo praticado pela Receita Federal do Brasil"
+        }
+      ],
+      "eventos_futuros": []
+    },
+    "simei": {
+      "enquadrado": true,
+      "situacao": "Enquadrado no SIMEI desde 01/01/2025",
+      "data_desde": "2025-01-01",
+      "periodos_anteriores": [
+        {
+          "data_inicial": "2024-01-01",
+          "data_final": "2024-12-31",
+          "detalhamento": "Desenquadrada por Ato Administrativo praticado pela Receita Federal do Brasil"
+        },
+        {
+          "data_inicial": "2010-07-30",
+          "data_final": "2023-12-31",
+          "detalhamento": "Desenquadrada por Ato Administrativo praticado pela Receita Federal do Brasil"
+        }
+      ],
+      "eventos_futuros": [
+        {
+          "descricao": "Exclusão de Ofício - Débitos",
+          "data_efeito": "2027-01-01"
+        }
+      ]
+    },
+    "mei_transportador": {
+      "possui_periodos": false
+    },
+    "alertas": [],
+    "dados_adicionais": [
+      {
+        "texto": "Situação no Regime Regular do IBS: Não optante Situação no Regime Regular da CBS: Não optante",
+        "tabelas": [],
+        "secao": "Situação Atual"
+      },
+      {
+        "texto": "Opções pelo Regime Regular IBS/CBS em Períodos Anteriores: Não Existem",
+        "tabelas": [],
+        "secao": "Períodos Anteriores"
+      },
+      {
+        "texto": "Não Existem",
+        "tabelas": [],
+        "secao": "Eventos Futuros (Regime Regular IBS/CBS)"
+      }
+    ]
+  },
+  "contract_valid": true,
+  "worker_exit": 0,
+  "windows": {
+    "errors": [],
+    "visible_events": 8,
+    "foreground_events": 3,
+    "alive_after": [],
+    "forced_cleanup": [],
+    "remaining_after_intervention": [],
+    "max_inventory_gap_seconds": 0.295
+  },
+  "launches": [
+    {
+      "channel": "chrome",
+      "headless": false,
+      "args": [
+        "--disable-blink-features=AutomationControlled",
+        "--no-sandbox",
+        "--disable-dev-shm-usage",
+        "--window-position=-32000,-32000",
+        "--window-size=1,1"
+      ]
+    }
+  ],
+  "module_logs": [
+    "modulo=Optantes tentativa=1 evento=inicio",
+    "modulo=Optantes tentativa=1 duracao=8.342 codigo=ok"
+  ],
+  "attempts": 1,
+  "captcha_blocks": 0,
+  "cleanup_failure": false,
+  "ended": "2026-10-21T10:06:04.387779-03:00"
+}

@@ -1,0 +1,17 @@
+{"t": 1792588163.6134248, "kind": "worker_start", "pid": 13964, "mode": "control", "port": 59811}
+{"t": 1792588164.658369, "kind": "app_log", "message": "modulo=CNPJ tentativa=1 evento=inicio"}
+{"t": 1792588164.6590128, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
+{"t": 1792588190.3150907, "kind": "app_log", "message": "modulo=CNPJ tentativa=1 duracao=25.657 codigo=ok"}
+{"t": 1792588190.3158114, "kind": "app_log", "message": "modulo=DASN tentativa=1 evento=inicio"}
+{"t": 1792588190.31689, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
+{"t": 1792588200.7657144, "kind": "app_log", "message": "modulo=DASN tentativa=1 duracao=10.450 codigo=captcha_bloqueado"}
+{"t": 1792588202.7756717, "kind": "app_log", "message": "modulo=DASN tentativa=2 evento=inicio"}
+{"t": 1792588202.7766707, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
+{"t": 1792588215.7870471, "kind": "app_log", "message": "modulo=DASN tentativa=2 duracao=13.012 codigo=ok"}
+{"t": 1792588215.787714, "kind": "app_log", "message": "modulo=Optantes tentativa=1 evento=inicio"}
+{"t": 1792588215.7882078, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
+{"t": 1792588218.2257974, "kind": "app_log", "message": "modulo=Optantes tentativa=1 duracao=2.438 codigo=captcha_bloqueado"}
+{"t": 1792588220.229453, "kind": "app_log", "message": "modulo=Optantes tentativa=2 evento=inicio"}
+{"t": 1792588220.2305233, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
+{"t": 1792588228.052816, "kind": "app_log", "message": "modulo=Optantes tentativa=2 duracao=7.823 codigo=ok"}
+{"t": 1792588228.2942848, "kind": "worker_end"}

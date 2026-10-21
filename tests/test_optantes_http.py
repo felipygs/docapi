@@ -1,4 +1,5 @@
 """Contrato HTTP real em loopback; os serviços externos são simulados, não as rotas."""
+import asyncio
 import json
 import socket
 import threading
@@ -170,6 +171,32 @@ class TestOptantesHTTP(unittest.TestCase):
         # Cadastro, DASN e Optantes agora têm sessões independentes.
         self.assertEqual(browser.close.await_count, 3)
         playwright_context.__aexit__.assert_awaited_once()
+
+    def test_agregado_cadastro_pendurado_retorna_504_e_libera_sessao(self):
+        from test_consultar_recovery import PlaywrightLocal, Sessao
+
+        sessao = Sessao()
+        seguintes = []
+
+        async def cadastro(page, cnpj):
+            await asyncio.Event().wait()
+
+        async def indevido(*args, **kwargs):
+            seguintes.append(True)
+            raise AssertionError('Executou modulo apos expirar o cadastro')
+
+        with patch('app.consultar.async_playwright', PlaywrightLocal), \
+             patch('app.consultar.create_browser', AsyncMock(return_value=(sessao, sessao))), \
+             patch('app.consultar.consultar_cnpj', cadastro), \
+             patch('app.consultar.consultar_dasn', indevido), \
+             patch('app.consultar.consultar_optantes', indevido), \
+             patch('app.consultar._CADASTRO_TIMEOUT_SECONDS', 0.02):
+            status, body = self.post('/consultar')
+        self.assertEqual(status, 504)
+        self.assertIn('CNPJ', body['detail'])
+        self.assertNotIn('cadastro', body)
+        self.assertTrue(sessao.fechada)
+        self.assertEqual(seguintes, [])
 
     def test_http_cnpj_e_dasn_continuam_serializando_como_antes(self):
         for path, target, model in (('/consultar/cnpj', 'app.api.consultar_apenas_cnpj', CadastroResponse), ('/consultar/dasn', 'app.api.consultar_apenas_dasn', DasnResponse)):

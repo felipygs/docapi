@@ -1,0 +1,8 @@
+{"t": 1792586771.0463428, "kind": "worker_start", "pid": 10144, "mode": "control", "port": 50733}
+{"t": 1792586772.129822, "kind": "app_log", "message": "modulo=DASN tentativa=1 evento=inicio"}
+{"t": 1792586772.1304884, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
+{"t": 1792586779.7641346, "kind": "app_log", "message": "modulo=DASN tentativa=1 duracao=7.635 codigo=nao_optante"}
+{"t": 1792586779.764917, "kind": "app_log", "message": "modulo=Optantes tentativa=1 evento=inicio"}
+{"t": 1792586779.7660336, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
+{"t": 1792586786.997444, "kind": "app_log", "message": "modulo=Optantes tentativa=1 duracao=7.232 codigo=ok"}
+{"t": 1792586787.2806163, "kind": "worker_end"}

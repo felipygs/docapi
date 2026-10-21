@@ -1,0 +1,62 @@
+{
+  "case": "consultar_dasn_57435953000108_r2_headless",
+  "mode": "headless",
+  "route": "/consultar/dasn",
+  "cnpj": "57435953000108",
+  "round": 2,
+  "started": "2026-10-21T09:55:11.050607-03:00",
+  "duration_seconds": 45.448,
+  "http_status": 502,
+  "error": "external_failure",
+  "worker_exit": 0,
+  "windows": {
+    "errors": [],
+    "visible_events": 0,
+    "foreground_events": 0,
+    "alive_after": [],
+    "forced_cleanup": [],
+    "remaining_after_intervention": [],
+    "max_inventory_gap_seconds": 0.6018
+  },
+  "launches": [
+    {
+      "channel": "chrome",
+      "headless": true,
+      "args": [
+        "--disable-blink-features=AutomationControlled",
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    },
+    {
+      "channel": "chrome",
+      "headless": true,
+      "args": [
+        "--disable-blink-features=AutomationControlled",
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    },
+    {
+      "channel": "chrome",
+      "headless": true,
+      "args": [
+        "--disable-blink-features=AutomationControlled",
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    }
+  ],
+  "module_logs": [
+    "modulo=DASN tentativa=1 evento=inicio",
+    "modulo=DASN tentativa=1 duracao=14.076 codigo=captcha_bloqueado",
+    "modulo=DASN tentativa=2 evento=inicio",
+    "modulo=DASN tentativa=2 duracao=11.545 codigo=captcha_bloqueado",
+    "modulo=DASN tentativa=3 evento=inicio",
+    "modulo=DASN tentativa=3 duracao=12.303 codigo=captcha_bloqueado"
+  ],
+  "attempts": 3,
+  "captcha_blocks": 3,
+  "cleanup_failure": false,
+  "ended": "2026-10-21T09:55:58.968968-03:00"
+}

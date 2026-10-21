@@ -1,0 +1,5 @@
+{"t": 1792587525.4042308, "kind": "worker_start", "pid": 25072, "mode": "control", "port": 53321}
+{"t": 1792587525.9772086, "kind": "app_log", "message": "modulo=Optantes tentativa=1 evento=inicio"}
+{"t": 1792587525.97796, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
+{"t": 1792587534.8770576, "kind": "app_log", "message": "modulo=Optantes tentativa=1 duracao=8.900 codigo=ok"}
+{"t": 1792587535.2948618, "kind": "worker_end"}

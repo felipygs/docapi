@@ -385,6 +385,54 @@ class TestConsultarRecovery(unittest.IsolatedAsyncioTestCase):
                         task.cancel()
                     await asyncio.gather(task, return_exceptions=True)
 
+    async def test_cadastro_tem_prazo_total_e_fecha_sessao_pendurada(self):
+        iniciou = asyncio.Event()
+
+        async def cadastro(page, cnpj):
+            iniciou.set()
+            await asyncio.Event().wait()
+
+        with patch.object(consultas, 'consultar_cnpj', cadastro), \
+             patch.object(consultas, '_CADASTRO_TIMEOUT_SECONDS', 0.02, create=True):
+            task = asyncio.create_task(consultas._consultar_cadastro(object(), self.cn))
+            try:
+                done, _ = await asyncio.wait({task}, timeout=0.2)
+                self.assertIn(task, done, 'Cadastro sem prazo total deixa consulta completa pendurada')
+                with self.assertRaisesRegex(TimeoutError, 'CNPJ'):
+                    task.result()
+                self.assertTrue(iniciou.is_set())
+                self.assertTrue(self.sessoes[0].fechada)
+            finally:
+                if not task.done():
+                    task.cancel()
+                await asyncio.gather(task, return_exceptions=True)
+
+    async def test_cadastro_registra_inicio_antes_de_aguardar_e_falha_sem_segredos(self):
+        from app.errors import CaptchaBloqueadoError
+        iniciou = asyncio.Event()
+        liberar = asyncio.Event()
+
+        async def cadastro(page, cnpj):
+            iniciou.set()
+            await liberar.wait()
+            raise CaptchaBloqueadoError(f'SEGREDO cookie=TOKEN {cnpj}')
+
+        with patch.object(consultas, 'consultar_cnpj', cadastro), \
+             self.assertLogs('app.consultar', level='INFO') as captured:
+            task = asyncio.create_task(consultas._consultar_cadastro(object(), self.cn))
+            try:
+                await asyncio.wait_for(iniciou.wait(), timeout=1)
+                self.assertTrue(any('modulo=CNPJ' in msg and 'evento=inicio' in msg
+                                    for msg in captured.output))
+            finally:
+                liberar.set()
+                with self.assertRaises(CaptchaBloqueadoError):
+                    await task
+        texto = '\n'.join(captured.output)
+        self.assertIn('codigo=captcha_bloqueado', texto)
+        for segredo in (self.cn, 'SEGREDO', 'TOKEN', 'cookie'):
+            self.assertNotIn(segredo, texto)
+
     async def test_agregado_recupera_optantes_sem_repetir_cadastro_e_dasn(self):
         chamadas = {'cadastro': 0, 'dasn': 0, 'optantes': 0}
 

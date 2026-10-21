@@ -1,0 +1,22 @@
+{
+  "files_scanned": 172,
+  "credential_hits": [],
+  "hash_differences": [],
+  "hash_count": 36,
+  "listeners_before": [],
+  "listeners_after": [],
+  "result_count": 50,
+  "real_call_count": 48,
+  "pair_count": 13,
+  "repeated_pair_count": 11,
+  "sequential_calls_verified": true,
+  "remaining_process_cases": [],
+  "cleanup_failure_cases": [
+    "consultar_dasn_53987789000182_r1_headless"
+  ],
+  "live_experimental_pids": [],
+  "observer_error_cases": [],
+  "headless_window_or_focus_cases": [],
+  "headless_visible_inventory_cases": [],
+  "headless_foreground_inventory_cases": []
+}

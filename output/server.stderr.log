@@ -1,0 +1,10 @@
+2026-10-20 22:37:53,036 INFO:     uvicorn.error Started server process [1552]
+2026-10-20 22:37:53,039 INFO:     uvicorn.error Waiting for application startup.
+2026-10-20 22:37:53,043 INFO:     uvicorn.error Application startup complete.
+2026-10-20 22:37:53,047 INFO:     uvicorn.error Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2026-10-20 22:38:02,798 INFO:     app.consultar modulo=CNPJ tentativa=1 evento=inicio
+2026-10-20 22:38:15,761 INFO:     app.consultar modulo=CNPJ tentativa=1 duracao=12.964 codigo=ok
+2026-10-20 22:38:15,770 INFO:     app.consultar modulo=DASN tentativa=1 evento=inicio
+2026-10-20 22:38:25,443 INFO:     app.consultar modulo=DASN tentativa=1 duracao=9.673 codigo=ok
+2026-10-20 22:38:25,444 INFO:     app.consultar modulo=Optantes tentativa=1 evento=inicio
+2026-10-20 22:38:34,653 INFO:     app.consultar modulo=Optantes tentativa=1 duracao=9.209 codigo=ok

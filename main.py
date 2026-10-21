@@ -1,6 +1,7 @@
 import sys
 import asyncio
 import json
+from copy import deepcopy
 import uvicorn
 
 if sys.stdout.encoding != "utf-8":
@@ -103,12 +104,19 @@ def run_server():
         if idx + 1 < len(sys.argv):
             port = int(sys.argv[idx + 1])
 
+    log_config = deepcopy(uvicorn.config.LOGGING_CONFIG)
+    log_config['formatters']['default']['fmt'] = '%(asctime)s %(levelprefix)s %(name)s %(message)s'
+    log_config['loggers']['app'] = {
+        'handlers': ['default'], 'level': 'INFO', 'propagate': False,
+    }
+
     uvicorn.run(
         "app.api:app",
         host="0.0.0.0",
         port=port,
         proxy_headers=True,
         forwarded_allow_ips="*",
+        log_config=log_config,
     )
 
 

@@ -1,0 +1,84 @@
+{
+  "case": "consultar_optantes_53987789000182_r1_control",
+  "mode": "control",
+  "route": "/consultar/optantes",
+  "cnpj": "53987789000182",
+  "round": 1,
+  "started": "2026-10-21T10:02:45.223135-03:00",
+  "duration_seconds": 8.558,
+  "http_status": 200,
+  "data": {
+    "cnpj_consultado": "53987789000182",
+    "cnpj_matriz": "53987789000182",
+    "nome_empresarial": "BARBARA C SILVA REPRESENTACOES",
+    "consultado_em": "2026-10-21T10:02:54",
+    "abrange_todos_estabelecimentos": true,
+    "simples_nacional": {
+      "optante": true,
+      "situacao": "Optante pelo Simples Nacional desde 20/02/2024",
+      "data_desde": "2024-02-20",
+      "periodos_anteriores": [],
+      "eventos_futuros": []
+    },
+    "simei": {
+      "enquadrado": false,
+      "situacao": "NÃO enquadrado no SIMEI",
+      "data_desde": null,
+      "periodos_anteriores": [],
+      "eventos_futuros": []
+    },
+    "mei_transportador": {
+      "possui_periodos": false
+    },
+    "alertas": [],
+    "dados_adicionais": [
+      {
+        "texto": "Situação no Regime Regular do IBS: Não optante Situação no Regime Regular da CBS: Não optante",
+        "tabelas": [],
+        "secao": "Situação Atual"
+      },
+      {
+        "texto": "Opções pelo Regime Regular IBS/CBS em Períodos Anteriores: Não Existem",
+        "tabelas": [],
+        "secao": "Períodos Anteriores"
+      },
+      {
+        "texto": "Não Existem",
+        "tabelas": [],
+        "secao": "Eventos Futuros (Regime Regular IBS/CBS)"
+      }
+    ]
+  },
+  "contract_valid": true,
+  "worker_exit": 0,
+  "windows": {
+    "errors": [],
+    "visible_events": 6,
+    "foreground_events": 1,
+    "alive_after": [],
+    "forced_cleanup": [],
+    "remaining_after_intervention": [],
+    "max_inventory_gap_seconds": 0.2584
+  },
+  "launches": [
+    {
+      "channel": "chrome",
+      "headless": false,
+      "args": [
+        "--disable-blink-features=AutomationControlled",
+        "--no-sandbox",
+        "--disable-dev-shm-usage",
+        "--window-position=-32000,-32000",
+        "--window-size=1,1"
+      ]
+    }
+  ],
+  "module_logs": [
+    "modulo=Optantes tentativa=1 evento=inicio",
+    "modulo=Optantes tentativa=1 duracao=8.054 codigo=ok"
+  ],
+  "attempts": 1,
+  "captcha_blocks": 0,
+  "cleanup_failure": false,
+  "ended": "2026-10-21T10:02:56.128040-03:00"
+}

@@ -1,0 +1,105 @@
+{
+  "case": "consultar_optantes_43996591000101_r1_control",
+  "mode": "control",
+  "route": "/consultar/optantes",
+  "cnpj": "43996591000101",
+  "round": 1,
+  "started": "2026-10-21T09:58:44.350985-03:00",
+  "duration_seconds": 9.438,
+  "http_status": 200,
+  "data": {
+    "cnpj_consultado": "43996591000101",
+    "cnpj_matriz": "43996591000101",
+    "nome_empresarial": "ELIANE S MURTA CONSULTORIO ODONTOLOGICO",
+    "consultado_em": "2026-10-21T09:58:53",
+    "abrange_todos_estabelecimentos": true,
+    "simples_nacional": {
+      "optante": true,
+      "situacao": "Optante pelo Simples Nacional desde 01/01/2026",
+      "data_desde": "2026-01-01",
+      "periodos_anteriores": [
+        {
+          "data_inicial": "2025-01-01",
+          "data_final": "2025-12-31",
+          "detalhamento": "Excluída por Ato Administrativo praticado pela Receita Federal do Brasil"
+        },
+        {
+          "data_inicial": "2024-01-01",
+          "data_final": "2024-12-31",
+          "detalhamento": "Excluída por Ato Administrativo praticado pela Receita Federal do Brasil"
+        },
+        {
+          "data_inicial": "2021-10-25",
+          "data_final": "2023-12-31",
+          "detalhamento": "Excluída por Ato Administrativo praticado pela Receita Federal do Brasil"
+        }
+      ],
+      "eventos_futuros": [
+        {
+          "descricao": "Exclusão de Ofício - Débitos",
+          "data_efeito": "2027-01-01"
+        }
+      ]
+    },
+    "simei": {
+      "enquadrado": false,
+      "situacao": "NÃO enquadrado no SIMEI",
+      "data_desde": null,
+      "periodos_anteriores": [],
+      "eventos_futuros": []
+    },
+    "mei_transportador": {
+      "possui_periodos": false
+    },
+    "alertas": [],
+    "dados_adicionais": [
+      {
+        "texto": "Situação no Regime Regular do IBS: Não optante Situação no Regime Regular da CBS: Não optante",
+        "tabelas": [],
+        "secao": "Situação Atual"
+      },
+      {
+        "texto": "Opções pelo Regime Regular IBS/CBS em Períodos Anteriores: Não Existem",
+        "tabelas": [],
+        "secao": "Períodos Anteriores"
+      },
+      {
+        "texto": "Não Existem",
+        "tabelas": [],
+        "secao": "Eventos Futuros (Regime Regular IBS/CBS)"
+      }
+    ]
+  },
+  "contract_valid": true,
+  "worker_exit": 0,
+  "windows": {
+    "errors": [],
+    "visible_events": 4,
+    "foreground_events": 1,
+    "alive_after": [],
+    "forced_cleanup": [],
+    "remaining_after_intervention": [],
+    "max_inventory_gap_seconds": 0.3551
+  },
+  "launches": [
+    {
+      "channel": "chrome",
+      "headless": false,
+      "args": [
+        "--disable-blink-features=AutomationControlled",
+        "--no-sandbox",
+        "--disable-dev-shm-usage",
+        "--window-position=-32000,-32000",
+        "--window-size=1,1"
+      ]
+    }
+  ],
+  "module_logs": [
+    "modulo=Optantes tentativa=1 evento=inicio",
+    "modulo=Optantes tentativa=1 duracao=8.900 codigo=ok"
+  ],
+  "attempts": 1,
+  "captcha_blocks": 0,
+  "cleanup_failure": false,
+  "ended": "2026-10-21T09:58:55.917650-03:00"
+}

@@ -1,0 +1,14 @@
+{
+  "report": "C:\\Users\\Felipe\\dev\\docapi\\docs\\estudo-headless-2026-10-21.md",
+  "verdict": "Inviável nas condições testadas",
+  "calls": 48,
+  "http": {
+    "control": {
+      "200": 24
+    },
+    "headless": {
+      "502": 22,
+      "200": 2
+    }
+  }
+}

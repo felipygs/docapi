@@ -1,0 +1,113 @@
+{
+  "case": "consultar_optantes_57435953000108_r1_control",
+  "mode": "control",
+  "route": "/consultar/optantes",
+  "cnpj": "57435953000108",
+  "round": 1,
+  "started": "2026-10-21T10:04:18.556018-03:00",
+  "duration_seconds": 7.805,
+  "http_status": 200,
+  "data": {
+    "cnpj_consultado": "57435953000108",
+    "cnpj_matriz": "57435953000108",
+    "nome_empresarial": "57.435.953 JOSEANE BATISTA SILVA",
+    "consultado_em": "2026-10-21T10:04:26",
+    "abrange_todos_estabelecimentos": true,
+    "simples_nacional": {
+      "optante": false,
+      "situacao": "NÃO optante pelo Simples Nacional",
+      "data_desde": null,
+      "periodos_anteriores": [
+        {
+          "data_inicial": "2024-09-25",
+          "data_final": "2025-08-26",
+          "detalhamento": "Excluída por Ato Administrativo praticado pela Receita Federal do Brasil"
+        }
+      ],
+      "eventos_futuros": []
+    },
+    "simei": {
+      "enquadrado": false,
+      "situacao": "NÃO enquadrado no SIMEI",
+      "data_desde": null,
+      "periodos_anteriores": [
+        {
+          "data_inicial": "2024-09-25",
+          "data_final": "2025-08-26",
+          "detalhamento": "Desenquadrada por Ato Administrativo praticado pela Receita Federal do Brasil"
+        }
+      ],
+      "eventos_futuros": []
+    },
+    "mei_transportador": {
+      "possui_periodos": true,
+      "detalhes": {
+        "texto": "Mei transportador autônomo de cargas: Data Inicial Data Final 25/09/2024 26/08/2025",
+        "tabelas": [
+          {
+            "cabecalhos": [
+              "Data Inicial",
+              "Data Final"
+            ],
+            "linhas": [
+              [
+                "25/09/2024",
+                "26/08/2025"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "alertas": [],
+    "dados_adicionais": [
+      {
+        "texto": "Situação no Regime Regular do IBS: Não optante Situação no Regime Regular da CBS: Não optante",
+        "tabelas": [],
+        "secao": "Situação Atual"
+      },
+      {
+        "texto": "Opções pelo Regime Regular IBS/CBS em Períodos Anteriores: Não Existem",
+        "tabelas": [],
+        "secao": "Períodos Anteriores"
+      },
+      {
+        "texto": "Não Existem",
+        "tabelas": [],
+        "secao": "Eventos Futuros (Regime Regular IBS/CBS)"
+      }
+    ]
+  },
+  "contract_valid": true,
+  "worker_exit": 0,
+  "windows": {
+    "errors": [],
+    "visible_events": 6,
+    "foreground_events": 1,
+    "alive_after": [],
+    "forced_cleanup": [],
+    "remaining_after_intervention": [],
+    "max_inventory_gap_seconds": 0.2342
+  },
+  "launches": [
+    {
+      "channel": "chrome",
+      "headless": false,
+      "args": [
+        "--disable-blink-features=AutomationControlled",
+        "--no-sandbox",
+        "--disable-dev-shm-usage",
+        "--window-position=-32000,-32000",
+        "--window-size=1,1"
+      ]
+    }
+  ],
+  "module_logs": [
+    "modulo=Optantes tentativa=1 evento=inicio",
+    "modulo=Optantes tentativa=1 duracao=7.333 codigo=ok"
+  ],
+  "attempts": 1,
+  "captcha_blocks": 0,
+  "cleanup_failure": false,
+  "ended": "2026-10-21T10:04:28.744774-03:00"
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "route": "/consultar/optantes",
+    "cnpj": "43996591000101",
+    "rounds": [
+      {
+        "round": 1,
+        "control": "consultar_optantes_43996591000101_r1_control",
+        "headless": "consultar_optantes_43996591000101_r1_headless",
+        "reasons": [
+          "http_or_contract",
+          "more_attempts_or_blocks"
+        ]
+      },
+      {
+        "round": 2,
+        "control": "consultar_optantes_43996591000101_r2_control",
+        "headless": "consultar_optantes_43996591000101_r2_headless",
+        "reasons": [
+          "http_or_contract",
+          "more_attempts_or_blocks"
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/consultar/optantes",
+    "cnpj": "45726608000136",
+    "rounds": [
+      {
+        "round": 1,
+        "control": "consultar_optantes_45726608000136_r1_control",
+        "headless": "consultar_optantes_45726608000136_r1_headless",
+        "reasons": [
+          "http_or_contract",
+          "more_attempts_or_blocks"
+        ]
+      },
+      {
+        "round": 2,
+        "control": "consultar_optantes_45726608000136_r2_control",
+        "headless": "consultar_optantes_45726608000136_r2_headless",
+        "reasons": [
+          "http_or_contract",
+          "more_attempts_or_blocks"
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/consultar/optantes",
+    "cnpj": "53987789000182",
+    "rounds": [
+      {
+        "round": 1,
+        "control": "consultar_optantes_53987789000182_r1_control",
+        "headless": "consultar_optantes_53987789000182_r1_headless",
+        "reasons": [
+          "http_or_contract",
+          "more_attempts_or_blocks"
+        ]
+      },
+      {
+        "round": 2,
+        "control": "consultar_optantes_53987789000182_r2_control",
+        "headless": "consultar_optantes_53987789000182_r2_headless",
+        "reasons": [
+          "http_or_contract",
+          "more_attempts_or_blocks"
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/consultar/optantes",
+    "cnpj": "57435953000108",
+    "rounds": [
+      {
+        "round": 1,
+        "control": "consultar_optantes_57435953000108_r1_control",
+        "headless": "consultar_optantes_57435953000108_r1_headless",
+        "reasons": [
+          "http_or_contract",
+          "more_attempts_or_blocks"
+        ]
+      },
+      {
+        "round": 2,
+        "control": "consultar_optantes_57435953000108_r2_control",
+        "headless": "consultar_optantes_57435953000108_r2_headless",
+        "reasons": [
+          "http_or_contract",
+          "more_attempts_or_blocks"
+        ]
+      }
+    ]
+  },
+  {
+    "route": "/consultar/optantes",
+    "cnpj": "12309631000176",
+    "rounds": [
+      {
+        "round": 1,
+        "control": "consultar_optantes_12309631000176_r1_control",
+        "headless": "consultar_optantes_12309631000176_r1_headless",
+        "reasons": [
+          "http_or_contract",
+          "more_attempts_or_blocks"
+        ]
+      },
+      {
+        "round": 2,
+        "control": "consultar_optantes_12309631000176_r2_control",
+        "headless": "consultar_optantes_12309631000176_r2_headless",
+        "reasons": [
+          "http_or_contract",
+          "more_attempts_or_blocks"
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+{"t": 1792586788.9674053, "kind": "worker_start", "pid": 25132, "mode": "headless", "port": 59619}
+{"t": 1792586789.6267061, "kind": "app_log", "message": "modulo=DASN tentativa=1 evento=inicio"}
+{"t": 1792586789.627365, "kind": "launch", "options": {"channel": "chrome", "headless": true, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage"]}}
+{"t": 1792586798.6042397, "kind": "app_log", "message": "modulo=DASN tentativa=1 duracao=8.978 codigo=captcha_bloqueado"}
+{"t": 1792586800.6109877, "kind": "app_log", "message": "modulo=DASN tentativa=2 evento=inicio"}
+{"t": 1792586800.6126423, "kind": "launch", "options": {"channel": "chrome", "headless": true, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage"]}}
+{"t": 1792586810.2431219, "kind": "app_log", "message": "modulo=DASN tentativa=2 duracao=9.632 codigo=captcha_bloqueado"}
+{"t": 1792586815.259829, "kind": "app_log", "message": "modulo=DASN tentativa=3 evento=inicio"}
+{"t": 1792586815.263596, "kind": "launch", "options": {"channel": "chrome", "headless": true, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage"]}}
+{"t": 1792586830.4862497, "kind": "app_log", "message": "modulo=DASN tentativa=3 duracao=15.229 codigo=captcha_bloqueado"}
+{"t": 1792586830.7281268, "kind": "worker_end"}

@@ -1,0 +1,4905 @@
+{
+  "started": 1792586897.2672694,
+  "ended": 1792586908.7951355,
+  "errors": [],
+  "processes": [
+    {
+      "pid": 24372,
+      "parent": 13908,
+      "name": "python.exe",
+      "created": 134370603694010939,
+      "alive": true
+    },
+    {
+      "pid": 18352,
+      "parent": 7612,
+      "name": "python.exe",
+      "created": 134370604973264018,
+      "alive": true
+    },
+    {
+      "pid": 3176,
+      "parent": 7612,
+      "name": "conhost.exe",
+      "created": 134370604973015767,
+      "alive": true
+    },
+    {
+      "pid": 7612,
+      "parent": 24372,
+      "name": "python.exe",
+      "created": 134370604972849577,
+      "alive": true
+    },
+    {
+      "pid": 25596,
+      "parent": 18352,
+      "name": "node.exe",
+      "created": 134370604989320595,
+      "alive": true
+    },
+    {
+      "pid": 17284,
+      "parent": 25524,
+      "name": "chrome.exe",
+      "created": 134370604994695329,
+      "alive": true
+    },
+    {
+      "pid": 25524,
+      "parent": 25596,
+      "name": "chrome.exe",
+      "created": 134370604994403987,
+      "alive": false
+    },
+    {
+      "pid": 4008,
+      "parent": 25524,
+      "name": "chrome.exe",
+      "created": 134370604996863179,
+      "alive": true
+    },
+    {
+      "pid": 5552,
+      "parent": 25524,
+      "name": "chrome.exe",
+      "created": 134370604996667946,
+      "alive": false
+    },
+    {
+      "pid": 18760,
+      "parent": 25524,
+      "name": "chrome.exe",
+      "created": 134370604998109800,
+      "alive": true
+    },
+    {
+      "pid": 25120,
+      "parent": 25524,
+      "name": "chrome.exe",
+      "created": 134370604999742672,
+      "alive": false
+    },
+    {
+      "pid": 17144,
+      "parent": 25524,
+      "name": "chrome.exe",
+      "created": 134370604999830959,
+      "alive": false
+    },
+    {
+      "pid": 20144,
+      "parent": 25524,
+      "name": "chrome.exe",
+      "created": 134370605012080094,
+      "alive": false
+    },
+    {
+      "pid": 15720,
+      "parent": 25524,
+      "name": "chrome.exe",
+      "created": 134370605033282387,
+      "alive": true
+    },
+    {
+      "pid": 24808,
+      "parent": 25524,
+      "name": "chrome.exe",
+      "created": 134370605037181838,
+      "alive": true
+    },
+    {
+      "pid": 23784,
+      "parent": 25524,
+      "name": "chrome.exe",
+      "created": 134370605037259358,
+      "alive": true
+    }
+  ],
+  "events": [
+    {
+      "pid": 18352,
+      "hwnd": 5113978,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586898.2436907,
+      "os_tick": 3978015
+    },
+    {
+      "pid": 17284,
+      "hwnd": 1640460,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586899.5399258,
+      "os_tick": 3979281
+    },
+    {
+      "pid": 17284,
+      "hwnd": 5245050,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586899.5399408,
+      "os_tick": 3979281
+    },
+    {
+      "pid": 25524,
+      "hwnd": 133414,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586899.5994208,
+      "os_tick": 3979359
+    },
+    {
+      "pid": 25524,
+      "hwnd": 1376626,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586899.5994406,
+      "os_tick": 3979359
+    },
+    {
+      "pid": 25524,
+      "hwnd": 2295632,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586899.6319134,
+      "os_tick": 3979375
+    },
+    {
+      "pid": 25524,
+      "hwnd": 919532,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586899.6319265,
+      "os_tick": 3979375
+    },
+    {
+      "pid": 25524,
+      "hwnd": 1509002,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586899.6319337,
+      "os_tick": 3979375
+    },
+    {
+      "pid": 25524,
+      "hwnd": 1312830,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586899.6478283,
+      "os_tick": 3979406
+    },
+    {
+      "pid": 25524,
+      "hwnd": 1050812,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586899.6478448,
+      "os_tick": 3979421
+    },
+    {
+      "pid": 25524,
+      "hwnd": 2033690,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586899.6710682,
+      "os_tick": 3979421
+    },
+    {
+      "pid": 25524,
+      "hwnd": 1836968,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586899.694626,
+      "os_tick": 3979453
+    },
+    {
+      "pid": 4008,
+      "hwnd": 1181876,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586899.8306298,
+      "os_tick": 3979578
+    },
+    {
+      "pid": 25524,
+      "hwnd": 1706058,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586899.9490533,
+      "os_tick": 3979687
+    },
+    {
+      "pid": 25524,
+      "hwnd": 2033806,
+      "visible": true,
+      "event": 32768,
+      "t": 1792586900.2534142,
+      "os_tick": 3979750
+    },
+    {
+      "pid": 25524,
+      "hwnd": 1509520,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586900.253436,
+      "os_tick": 3979781
+    },
+    {
+      "pid": 25524,
+      "hwnd": 1706058,
+      "visible": true,
+      "event": 32770,
+      "t": 1792586900.253446,
+      "os_tick": 3979781
+    },
+    {
+      "pid": 25524,
+      "hwnd": 1706058,
+      "visible": true,
+      "event": 3,
+      "t": 1792586900.2538142,
+      "os_tick": 3979781
+    },
+    {
+      "pid": 25524,
+      "hwnd": 1640646,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586900.2538486,
+      "os_tick": 3979796
+    },
+    {
+      "pid": 25524,
+      "hwnd": 6162386,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586900.2538607,
+      "os_tick": 3979796
+    },
+    {
+      "pid": 25524,
+      "hwnd": 1181752,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586900.2538717,
+      "os_tick": 3979796
+    },
+    {
+      "pid": 5552,
+      "hwnd": 1115798,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586900.3621323,
+      "os_tick": 3980109
+    },
+    {
+      "pid": 5552,
+      "hwnd": 1640218,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586900.362362,
+      "os_tick": 3980109
+    },
+    {
+      "pid": 5552,
+      "hwnd": 983602,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586900.362492,
+      "os_tick": 3980109
+    },
+    {
+      "pid": 5552,
+      "hwnd": 1574796,
+      "visible": true,
+      "event": 32768,
+      "t": 1792586900.3625898,
+      "os_tick": 3980109
+    },
+    {
+      "pid": 5552,
+      "hwnd": 1574796,
+      "visible": true,
+      "event": 32770,
+      "t": 1792586900.3626711,
+      "os_tick": 3980109
+    },
+    {
+      "pid": 5552,
+      "hwnd": 1312886,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586902.2685318,
+      "os_tick": 3982046
+    },
+    {
+      "pid": 25524,
+      "hwnd": 395484,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586903.2495246,
+      "os_tick": 3983000
+    },
+    {
+      "pid": 25524,
+      "hwnd": 330014,
+      "visible": false,
+      "event": 32768,
+      "t": 1792586903.2495584,
+      "os_tick": 3983015
+    },
+    {
+      "pid": 25524,
+      "hwnd": 1706058,
+      "visible": false,
+      "event": 32771,
+      "t": 1792586907.535166,
+      "os_tick": 3987312
+    },
+    {
+      "pid": 25524,
+      "hwnd": 1706058,
+      "visible": false,
+      "event": 32769,
+      "t": 1792586907.5736196,
+      "os_tick": 3987328
+    }
+  ],
+  "external_event_count": 37,
+  "inventories": [
+    {
+      "t": 1792586897.2841232,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586897.4172359,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586897.522524,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586897.632616,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586897.7431514,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586897.8554027,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586897.9602256,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586898.0755768,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586898.173941,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586898.30061,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586898.4401155,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586898.536767,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586898.6563914,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586898.7447722,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586898.8522582,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586898.980756,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586899.0779393,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586899.1803424,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586899.293878,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586899.3997192,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586899.5162537,
+      "windows": [
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586899.619897,
+      "windows": [
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586899.760768,
+      "windows": [
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586899.9308627,
+      "windows": [
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586900.2212982,
+      "windows": [
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586900.3511937,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586900.4077306,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586900.5479352,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586900.6441634,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586900.735942,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586900.8461387,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586900.9525552,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586901.0649786,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586901.158553,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586901.2780375,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586901.4514217,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586901.5595787,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586901.6563954,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586901.76438,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586901.8738158,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586901.9810867,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586902.0898619,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586902.189873,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586902.3067398,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586902.4204755,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586902.5154927,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586902.633695,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586902.7456942,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586902.851454,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586902.9515457,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586903.061031,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586903.167043,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586903.2969553,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586903.3801522,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586903.4844086,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586903.6110208,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586903.7160676,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586903.8778002,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586903.9434474,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586904.0559268,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586904.1582828,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586904.2757952,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586904.3879378,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586904.5001724,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586904.6042085,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586904.7109592,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586904.8218725,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586904.9308226,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586905.0459065,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586905.1478724,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586905.2462947,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586905.3597715,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586905.4579487,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586905.5643942,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586905.6684246,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586905.7937357,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586905.930647,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586906.0169528,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586906.1182299,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586906.2210002,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586906.3291204,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586906.4450653,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586906.5437486,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586906.649903,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586906.7600186,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586906.8803375,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586906.9807732,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586907.0828042,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586907.2077665,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586907.3134024,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586907.4144793,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586907.5129678,
+      "windows": [
+        {
+          "pid": 5552,
+          "hwnd": 983602,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1706058,
+          "visible": true
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 5552,
+          "hwnd": 1640218,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": true,
+      "foreground": {
+        "pid": 25524,
+        "hwnd": 1706058,
+        "visible": true
+      }
+    },
+    {
+      "t": 1792586907.6551235,
+      "windows": [
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586907.7306666,
+      "windows": [
+        {
+          "pid": 25524,
+          "hwnd": 1509520,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1312830,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 1509002,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 919532,
+          "visible": false
+        },
+        {
+          "pid": 25524,
+          "hwnd": 6162386,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586907.8442023,
+      "windows": [
+        {
+          "pid": 17284,
+          "hwnd": 5245050,
+          "visible": false
+        },
+        {
+          "pid": 17284,
+          "hwnd": 1640460,
+          "visible": false
+        }
+      ],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586907.944986,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586908.066477,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586908.1881871,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586908.2930424,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586908.3803985,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586908.5014918,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586908.6075761,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586908.7182314,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    },
+    {
+      "t": 1792586908.79513,
+      "windows": [],
+      "foreground_owned": false,
+      "foreground": null
+    }
+  ],
+  "max_inventory_gap_seconds": 0.3048,
+  "visible_events": 5,
+  "foreground_events": 1,
+  "alive_after": [],
+  "coverage": "WinEvent create/show/hide/destroy + foreground; inventories ~100ms; no absolute flash guarantee",
+  "forced_cleanup": [],
+  "remaining_after_intervention": []
+}

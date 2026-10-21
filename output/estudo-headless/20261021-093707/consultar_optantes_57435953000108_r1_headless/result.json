@@ -1,0 +1,62 @@
+{
+  "case": "consultar_optantes_57435953000108_r1_headless",
+  "mode": "headless",
+  "route": "/consultar/optantes",
+  "cnpj": "57435953000108",
+  "round": 1,
+  "started": "2026-10-21T10:04:28.774306-03:00",
+  "duration_seconds": 31.923,
+  "http_status": 502,
+  "error": "external_failure",
+  "worker_exit": 0,
+  "windows": {
+    "errors": [],
+    "visible_events": 0,
+    "foreground_events": 0,
+    "alive_after": [],
+    "forced_cleanup": [],
+    "remaining_after_intervention": [],
+    "max_inventory_gap_seconds": 0.3059
+  },
+  "launches": [
+    {
+      "channel": "chrome",
+      "headless": true,
+      "args": [
+        "--disable-blink-features=AutomationControlled",
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    },
+    {
+      "channel": "chrome",
+      "headless": true,
+      "args": [
+        "--disable-blink-features=AutomationControlled",
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    },
+    {
+      "channel": "chrome",
+      "headless": true,
+      "args": [
+        "--disable-blink-features=AutomationControlled",
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    }
+  ],
+  "module_logs": [
+    "modulo=Optantes tentativa=1 evento=inicio",
+    "modulo=Optantes tentativa=1 duracao=8.115 codigo=captcha_bloqueado",
+    "modulo=Optantes tentativa=2 evento=inicio",
+    "modulo=Optantes tentativa=2 duracao=8.009 codigo=captcha_bloqueado",
+    "modulo=Optantes tentativa=3 evento=inicio",
+    "modulo=Optantes tentativa=3 duracao=8.193 codigo=captcha_bloqueado"
+  ],
+  "attempts": 3,
+  "captcha_blocks": 3,
+  "cleanup_failure": false,
+  "ended": "2026-10-21T10:05:02.634347-03:00"
+}

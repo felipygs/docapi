@@ -1,0 +1,11 @@
+{"t": 1792587588.5346909, "kind": "worker_start", "pid": 23036, "mode": "headless", "port": 58977}
+{"t": 1792587590.4683068, "kind": "app_log", "message": "modulo=Optantes tentativa=1 evento=inicio"}
+{"t": 1792587590.4690049, "kind": "launch", "options": {"channel": "chrome", "headless": true, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage"]}}
+{"t": 1792587618.1547778, "kind": "app_log", "message": "modulo=Optantes tentativa=1 duracao=27.690 codigo=captcha_bloqueado"}
+{"t": 1792587620.1698742, "kind": "app_log", "message": "modulo=Optantes tentativa=2 evento=inicio"}
+{"t": 1792587620.1776443, "kind": "launch", "options": {"channel": "chrome", "headless": true, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage"]}}
+{"t": 1792587629.3414109, "kind": "app_log", "message": "modulo=Optantes tentativa=2 duracao=9.172 codigo=captcha_bloqueado"}
+{"t": 1792587634.3524427, "kind": "app_log", "message": "modulo=Optantes tentativa=3 evento=inicio"}
+{"t": 1792587634.354155, "kind": "launch", "options": {"channel": "chrome", "headless": true, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage"]}}
+{"t": 1792587642.6400683, "kind": "app_log", "message": "modulo=Optantes tentativa=3 duracao=8.288 codigo=captcha_bloqueado"}
+{"t": 1792587642.7903159, "kind": "worker_end"}

@@ -41,7 +41,10 @@ Falhas transitorias e mensagens de bloqueio Captcha permitem novas submissoes
 normais dentro desses limites, sem resolver desafios automaticamente. CNPJ
 invalido e dados inconsistentes encerram a consulta. Falha nao significa
 ausencia de pendencias. A consulta completa executa os modulos sequencialmente,
-sem repetir os anteriores que ja terminaram. Cadastro CNPJ tem fluxo proprio.
+sem repetir os anteriores que ja terminaram. Cadastro CNPJ tem fluxo proprio,
+com prazo total de **180 segundos**, incluindo abertura e tentativas de captcha,
+mais ate cinco segundos para liberar o navegador. A consulta completa soma
+os tempos dos modulos; nao ha um limite unico de 180 segundos para os tres.
 
 ### Migracao do contrato de Optantes — 2.0.0 (quebra de compatibilidade)
 O novo contrato substitui a resposta anterior em `POST /consultar/optantes` e no
@@ -107,7 +110,7 @@ _ERROR_RESPONSES = {
     502: {
         "model": ErrorResponse,
         "description": "Falha no servico externo (Receita Federal)",
-        "content": {"application/json": {"example": {"detail": "CNPJ - Captcha solver falhou: NoPeCHA timeout (180s)"}}},
+        "content": {"application/json": {"example": {"detail": "CNPJ - captcha rejeitado pela Receita"}}},
     },
     504: {
         "model": ErrorResponse,

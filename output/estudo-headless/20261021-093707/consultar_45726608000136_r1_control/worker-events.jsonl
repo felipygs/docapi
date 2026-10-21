@@ -1,0 +1,11 @@
+{"t": 1792588057.082744, "kind": "worker_start", "pid": 24464, "mode": "control", "port": 63811}
+{"t": 1792588058.256303, "kind": "app_log", "message": "modulo=CNPJ tentativa=1 evento=inicio"}
+{"t": 1792588058.2570996, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
+{"t": 1792588072.394742, "kind": "app_log", "message": "modulo=CNPJ tentativa=1 duracao=14.139 codigo=ok"}
+{"t": 1792588072.3957074, "kind": "app_log", "message": "modulo=DASN tentativa=1 evento=inicio"}
+{"t": 1792588072.3966424, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
+{"t": 1792588085.105061, "kind": "app_log", "message": "modulo=DASN tentativa=1 duracao=12.709 codigo=ok"}
+{"t": 1792588085.105942, "kind": "app_log", "message": "modulo=Optantes tentativa=1 evento=inicio"}
+{"t": 1792588085.1066468, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
+{"t": 1792588093.2493494, "kind": "app_log", "message": "modulo=Optantes tentativa=1 duracao=8.143 codigo=ok"}
+{"t": 1792588093.6286457, "kind": "worker_end"}

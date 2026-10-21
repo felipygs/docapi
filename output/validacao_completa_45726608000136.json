@@ -1,0 +1,216 @@
+{
+  "status": 200,
+  "duracao": 32.62,
+  "resposta": {
+    "cnpj": "45726608000136",
+    "cadastro": {
+      "nome_empresarial": "IVANUSA DE O MELO COMERCIO",
+      "nome_fantasia": "MEGA 20",
+      "matriz": true,
+      "data_abertura": "2022-03-21",
+      "porte": "ME",
+      "atividade_principal": {
+        "codigo": "47.81-4-00",
+        "descricao": "Comércio varejista de artigos do vestuário e acessórios"
+      },
+      "atividades_secundarias": [
+        {
+          "codigo": "47.55-5-02",
+          "descricao": "Comercio varejista de artigos de armarinho"
+        },
+        {
+          "codigo": "47.55-5-03",
+          "descricao": "Comercio varejista de artigos de cama, mesa e banho"
+        },
+        {
+          "codigo": "47.59-8-99",
+          "descricao": "Comércio varejista de outros artigos de uso pessoal e doméstico não especificados anteriormente"
+        },
+        {
+          "codigo": "47.74-1-00",
+          "descricao": "Comércio varejista de artigos de óptica"
+        },
+        {
+          "codigo": "47.82-2-01",
+          "descricao": "Comércio varejista de calçados"
+        },
+        {
+          "codigo": "47.82-2-02",
+          "descricao": "Comércio varejista de artigos de viagem"
+        },
+        {
+          "codigo": "47.83-1-02",
+          "descricao": "Comércio varejista de artigos de relojoaria"
+        }
+      ],
+      "natureza_juridica": {
+        "codigo": "213-5",
+        "descricao": "Empresário (Individual)"
+      },
+      "ente_federativo": null,
+      "endereco": {
+        "logradouro": "R FREI BENJAMIM DE BORNO",
+        "numero": "36",
+        "complemento": null,
+        "bairro": "CENTRO",
+        "municipio": "GRAJAU",
+        "uf": "MA",
+        "cep": "65940000"
+      },
+      "contato": {
+        "email": "netinho.ferreira1@outlook.com",
+        "telefone": {
+          "ddd": "87",
+          "numero": "81478452"
+        }
+      },
+      "situacao_cadastral": {
+        "ativa": true,
+        "baixada": false,
+        "suspensa": false,
+        "inapta": false,
+        "nula": false,
+        "data": "2022-03-21",
+        "motivo": null
+      },
+      "situacao_especial": null,
+      "data_situacao_especial": null,
+      "capital_social": 4000000,
+      "socios": [],
+      "alertas": []
+    },
+    "dasn": {
+      "razao_social": "IVANUSA DE O MELO COMERCIO",
+      "mei_baixada": false,
+      "data_baixa": null,
+      "declaracoes": [
+        {
+          "ano": 2025,
+          "retificadora": false,
+          "status": "não optante",
+          "data_apresentacao": null,
+          "pendente": false,
+          "baixada": false,
+          "situacao_especial": null,
+          "data_baixa": null
+        },
+        {
+          "ano": 2024,
+          "retificadora": false,
+          "status": "não optante",
+          "data_apresentacao": null,
+          "pendente": false,
+          "baixada": false,
+          "situacao_especial": null,
+          "data_baixa": null
+        },
+        {
+          "ano": 2023,
+          "retificadora": true,
+          "status": "apresentada",
+          "data_apresentacao": "2026-01-15",
+          "pendente": false,
+          "baixada": false,
+          "situacao_especial": null,
+          "data_baixa": null
+        },
+        {
+          "ano": 2022,
+          "retificadora": true,
+          "status": "apresentada",
+          "data_apresentacao": "2023-05-31",
+          "pendente": false,
+          "baixada": false,
+          "situacao_especial": null,
+          "data_baixa": null
+        },
+        {
+          "ano": 2021,
+          "retificadora": false,
+          "status": "não optante",
+          "data_apresentacao": null,
+          "pendente": false,
+          "baixada": false,
+          "situacao_especial": null,
+          "data_baixa": null
+        }
+      ],
+      "pendentes": [],
+      "alertas": []
+    },
+    "optantes": {
+      "cnpj_consultado": "45726608000136",
+      "cnpj_matriz": "45726608000136",
+      "nome_empresarial": "IVANUSA DE O MELO COMERCIO",
+      "consultado_em": "2026-10-20T22:38:32",
+      "abrange_todos_estabelecimentos": true,
+      "simples_nacional": {
+        "optante": true,
+        "situacao": "Optante pelo Simples Nacional desde 01/01/2026",
+        "data_desde": "2026-01-01",
+        "periodos_anteriores": [
+          {
+            "data_inicial": "2022-03-21",
+            "data_final": "2025-12-31",
+            "detalhamento": "Excluída por Ato Administrativo praticado pela Receita Federal do Brasil"
+          }
+        ],
+        "eventos_futuros": []
+      },
+      "simei": {
+        "enquadrado": false,
+        "situacao": "NÃO enquadrado no SIMEI",
+        "data_desde": null,
+        "periodos_anteriores": [
+          {
+            "data_inicial": "2022-03-21",
+            "data_final": "2023-09-30",
+            "detalhamento": "Desenquadrada por Comunicação Obrigatória do Contribuinte"
+          }
+        ],
+        "eventos_futuros": []
+      },
+      "mei_transportador": {
+        "possui_periodos": false
+      },
+      "alertas": [],
+      "dados_adicionais": [
+        {
+          "texto": "Situação no Regime Regular do IBS: Não optante Situação no Regime Regular da CBS: Não optante",
+          "tabelas": [],
+          "secao": "Situação Atual"
+        },
+        {
+          "texto": "Opções pelo Regime Regular IBS/CBS em Períodos Anteriores: Não Existem",
+          "tabelas": [],
+          "secao": "Períodos Anteriores"
+        },
+        {
+          "texto": "Regime Descrição do evento Data efeito IBS Opção pelo regime regular 01/01/2027 CBS Opção pelo regime regular 01/01/2027",
+          "tabelas": [
+            {
+              "cabecalhos": [
+                "Regime",
+                "Descrição do evento",
+                "Data efeito"
+              ],
+              "linhas": [
+                [
+                  "IBS",
+                  "Opção pelo regime regular",
+                  "01/01/2027"
+                ],
+                [
+                  "CBS",
+                  "Opção pelo regime regular",
+                  "01/01/2027"
+                ]
+              ]
+            }
+          ],
+          "secao": "Eventos Futuros (Regime Regular IBS/CBS)"
+        }
+      ]
+    }
+  }
+}

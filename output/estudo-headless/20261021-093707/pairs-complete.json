@@ -1,0 +1,26 @@
+[
+  {
+    "route": "/consultar",
+    "cnpj": "45726608000136",
+    "rounds": [
+      {
+        "round": 1,
+        "control": "consultar_45726608000136_r1_control",
+        "headless": "consultar_45726608000136_r1_headless",
+        "reasons": [
+          "http_or_contract",
+          "more_attempts_or_blocks"
+        ]
+      },
+      {
+        "round": 2,
+        "control": "consultar_45726608000136_r2_control",
+        "headless": "consultar_45726608000136_r2_headless",
+        "reasons": [
+          "http_or_contract",
+          "more_attempts_or_blocks"
+        ]
+      }
+    ]
+  }
+]

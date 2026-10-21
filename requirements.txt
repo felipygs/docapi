@@ -2,3 +2,4 @@ playwright
 requests
 fastapi
 uvicorn
+python-dotenv

@@ -1,0 +1,5 @@
+{"t": 1792586740.0552642, "kind": "worker_start", "pid": 25524, "mode": "headless", "port": 59963}
+{"t": 1792586740.7382462, "kind": "app_log", "message": "modulo=CNPJ tentativa=1 evento=inicio"}
+{"t": 1792586740.7395494, "kind": "launch", "options": {"channel": "chrome", "headless": true, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage"]}}
+{"t": 1792586755.33319, "kind": "app_log", "message": "modulo=CNPJ tentativa=1 duracao=14.595 codigo=ok"}
+{"t": 1792586755.5787973, "kind": "worker_end"}

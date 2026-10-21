@@ -1,0 +1,73 @@
+{
+  "case": "consultar_45726608000136_r2_headless",
+  "mode": "headless",
+  "route": "/consultar",
+  "cnpj": "45726608000136",
+  "round": 2,
+  "started": "2026-10-21T10:10:28.945732-03:00",
+  "duration_seconds": 62.925,
+  "http_status": 502,
+  "error": "external_failure",
+  "worker_exit": 0,
+  "windows": {
+    "errors": [],
+    "visible_events": 0,
+    "foreground_events": 0,
+    "alive_after": [],
+    "forced_cleanup": [],
+    "remaining_after_intervention": [],
+    "max_inventory_gap_seconds": 0.1986
+  },
+  "launches": [
+    {
+      "channel": "chrome",
+      "headless": true,
+      "args": [
+        "--disable-blink-features=AutomationControlled",
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    },
+    {
+      "channel": "chrome",
+      "headless": true,
+      "args": [
+        "--disable-blink-features=AutomationControlled",
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    },
+    {
+      "channel": "chrome",
+      "headless": true,
+      "args": [
+        "--disable-blink-features=AutomationControlled",
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    },
+    {
+      "channel": "chrome",
+      "headless": true,
+      "args": [
+        "--disable-blink-features=AutomationControlled",
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ]
+    }
+  ],
+  "module_logs": [
+    "modulo=CNPJ tentativa=1 evento=inicio",
+    "modulo=CNPJ tentativa=1 duracao=17.574 codigo=ok",
+    "modulo=DASN tentativa=1 evento=inicio",
+    "modulo=DASN tentativa=1 duracao=13.629 codigo=captcha_bloqueado",
+    "modulo=DASN tentativa=2 evento=inicio",
+    "modulo=DASN tentativa=2 duracao=11.056 codigo=captcha_bloqueado",
+    "modulo=DASN tentativa=3 evento=inicio",
+    "modulo=DASN tentativa=3 duracao=13.082 codigo=captcha_bloqueado"
+  ],
+  "attempts": 4,
+  "captcha_blocks": 3,
+  "cleanup_failure": false,
+  "ended": "2026-10-21T10:11:34.369316-03:00"
+}

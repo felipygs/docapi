@@ -10,6 +10,7 @@ from .models import DasnResponse, DasnNaoOptanteResponse, OptantesResponse
 from .scrapers import consultar_cnpj, consultar_dasn, consultar_optantes
 
 logger = logging.getLogger(__name__)
+_CADASTRO_TIMEOUT_SECONDS = 180
 
 
 def _limpar_cnpj(cnpj: str) -> str:
@@ -44,6 +45,7 @@ async def _consultar_com_recuperacao(
                 inicio = loop.time()
                 codigo = 'erro_inesperado'
                 preservar_erro = True
+                logger.info('modulo=%s tentativa=%d evento=inicio', modulo, tentativa)
                 try:
                     browser, context = await create_browser(playwright)
                     page = await context.new_page()
@@ -120,16 +122,45 @@ async def _consultar_dasn_com_situacao(playwright, cnpj):
 
 
 async def _consultar_cadastro(playwright, cnpj_limpo):
-    """Consultar o cadastro em sessão própria, preservando erros na limpeza."""
-    browser, context = await create_browser(playwright)
+    """Limitar todo o cadastro, inclusive abertura e tentativas de captcha."""
+    browser = None
     preservar_erro = True
+    inicio = asyncio.get_running_loop().time()
+    codigo = 'erro_inesperado'
+    prazo = asyncio.timeout(_CADASTRO_TIMEOUT_SECONDS)
+    logger.info('modulo=CNPJ tentativa=1 evento=inicio')
     try:
-        page = await context.new_page()
-        resultado = await consultar_cnpj(page, cnpj_limpo)
+        async with prazo:
+            browser, context = await create_browser(playwright)
+            page = await context.new_page()
+            resultado = await consultar_cnpj(page, cnpj_limpo)
+        codigo = 'ok'
         preservar_erro = False
         return resultado
+    except (TimeoutError, PlaywrightTimeoutError):
+        codigo = 'timeout'
+        if prazo.expired():
+            raise TimeoutError('CNPJ - prazo total de consulta esgotado') from None
+        raise
+    except asyncio.CancelledError:
+        codigo = 'cancelado'
+        raise
+    except Exception as exc:
+        codigo = getattr(type(exc), 'codigo', 'erro_inesperado')
+        raise
     finally:
-        await fechar_browser(browser, preservar_erro=preservar_erro)
+        try:
+            if browser is not None:
+                await fechar_browser(browser, preservar_erro=preservar_erro)
+        except BaseException:
+            if codigo == 'ok':
+                codigo = 'cleanup_falhou'
+            raise
+        finally:
+            logger.info(
+                'modulo=CNPJ tentativa=1 duracao=%.3f codigo=%s',
+                asyncio.get_running_loop().time() - inicio, codigo,
+            )
 
 
 async def consultar_mei(cnpj: str) -> dict:
