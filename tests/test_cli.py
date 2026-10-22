@@ -8,7 +8,7 @@ from unittest.mock import AsyncMock, patch
 
 import main
 from app.models import CadastroResponse, DasnResponse
-from test_optantes_models import eliane
+from support.payloads import eliane
 
 
 class TestCLI(unittest.TestCase):

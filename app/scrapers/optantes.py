@@ -1,3 +1,5 @@
+from .dom import com_visibilidade
+from .network import erro_rede_transitorio
 from urllib.parse import urlsplit
 
 from playwright.async_api import Error as PlaywrightError, TimeoutError as PlaywrightTimeoutError
@@ -10,30 +12,18 @@ _LOAD_TIMEOUT_MS = 10000
 
 # O portal habilita o botão até iniciar AjaxMaisInfo, desabilita-o em
 # beforeSend e oculta .loader em complete. Não basta esperar o primeiro h3.
-_JS_ESTADO = """() => {
-    const visible = el => {
-        for (let p = el; p; p = p.parentElement) {
-            const style = getComputedStyle(p);
-            if (p.hidden || style.display === 'none' || style.visibility === 'hidden') return false;
-        }
-        return true;
-    };
+_JS_ESTADO = com_visibilidade("""() => {
+    /* visibilidade herdada */
     const errors = [...document.querySelectorAll('#spnMsgErro')];
     const erro = errors.some(el => visible(el) && el.textContent.trim());
     const loaders = [...document.querySelectorAll('.loader')];
     return {erro, loaders: loaders.length, carregando: loaders.some(visible)};
-}"""
-_JS_TERMINOU = """() => {
-    const visible = el => {
-        for (let p = el; p; p = p.parentElement) {
-            const s = getComputedStyle(p);
-            if (p.hidden || s.display === 'none' || s.visibility === 'hidden') return false;
-        }
-        return true;
-    };
+}""")
+_JS_TERMINOU = com_visibilidade("""() => {
+    /* visibilidade herdada */
     if ([...document.querySelectorAll('#spnMsgErro')].some(el => visible(el) && el.textContent.trim())) return true;
     return ![...document.querySelectorAll('.loader')].some(visible);
-}"""
+}""")
 
 
 def _resposta_mais_info(response) -> bool:
@@ -110,6 +100,6 @@ async def consultar_optantes(page, cnpj_limpo: str, max_retries: int = 3) -> dic
         # Preservar 504 em _safe_call sem repassar URLs, inputs ou call logs.
         raise PlaywrightTimeoutError('Optantes - timeout na navegação ou carregamento complementar') from None
     except PlaywrightError as exc:
-        if any(code in str(exc) for code in ('net::ERR_CONNECTION_', 'net::ERR_NETWORK_', 'net::ERR_NAME_NOT_RESOLVED', 'net::ERR_INTERNET_DISCONNECTED')):
+        if erro_rede_transitorio(exc):
             raise FalhaTransitoriaError('Optantes - falha temporaria de rede') from None
         raise RuntimeError('Optantes - navegação ou carregamento complementar: falha externa do navegador') from None

@@ -9,36 +9,14 @@ from unittest.mock import AsyncMock, patch
 from playwright.async_api import TimeoutError as PlaywrightTimeoutError
 
 from app.browser import create_browser
+from app import execution
 from app.models import DasnResponse, OptantesResponse
 
-consultas = importlib.import_module('app.consultar')
+consultas = importlib.import_module('app.consulta_service')
 browser_module = importlib.import_module('app.browser')
 
 
-class Pagina:
-    def __init__(self, sessao):
-        self.sessao = sessao
-
-
-class Sessao:
-    def __init__(self):
-        self.cookies = {}
-        self.storage = {}
-        self.fechada = False
-
-    async def new_page(self):
-        return Pagina(self)
-
-    async def close(self):
-        self.fechada = True
-
-
-class PlaywrightLocal:
-    async def __aenter__(self):
-        return self
-
-    async def __aexit__(self, *args):
-        return False
+from support.sessions import Pagina, Sessao, PlaywrightLocal
 
 
 class TestConsultarRecovery(unittest.IsolatedAsyncioTestCase):
@@ -60,7 +38,7 @@ class TestConsultarRecovery(unittest.IsolatedAsyncioTestCase):
             self.esperas.append(segundos)
 
         self.stack.enter_context(patch.object(consultas, 'create_browser', criar))
-        self.stack.enter_context(patch.object(consultas.asyncio, 'sleep', esperar))
+        self.stack.enter_context(patch.object(execution, 'esperar', esperar))
 
     async def executar(self, consultar, modulo='DASN', **kwargs):
         self.assertTrue(hasattr(consultas, '_consultar_com_recuperacao'),
@@ -245,7 +223,7 @@ class TestConsultarRecovery(unittest.IsolatedAsyncioTestCase):
         async def esperar(segundos):
             await asyncio.Event().wait()
 
-        with patch.object(consultas.asyncio, 'sleep', esperar):
+        with patch.object(execution, 'esperar', esperar):
             with self.assertRaises(TimeoutError):
                 await self.executar(consultar, prazo_total=0.02)
         self.assertEqual(len(self.sessoes), 1)

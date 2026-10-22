@@ -227,7 +227,6 @@ def _row_from_result(cnpj: str, data: dict | None, erro: str | None) -> dict:
 
 def _write_xlsx(rows: list[dict], path: Path) -> None:
     from openpyxl import Workbook
-    from openpyxl.utils import get_column_letter
 
     headers = [
         ("cnpj", "CNPJ"),
@@ -244,22 +243,13 @@ def _write_xlsx(rows: list[dict], path: Path) -> None:
         ("erro", "Erro"),
     ]
 
-    def sheet_rows(wb: Workbook, title: str, subset: list[dict]) -> None:
-        ws = wb.create_sheet(title)
-        ws.append([h[1] for h in headers])
-        for r in subset:
-            ws.append([r[k] for k, _ in headers])
-        for i, (_, label) in enumerate(headers, 1):
-            width = max(len(label), *(len(str(r[headers[i - 1][0]] or "")) for r in subset) if subset else [0])
-            ws.column_dimensions[get_column_letter(i)].width = min(max(width + 2, 12), 60)
-
     ok = [r for r in rows if not r["erro"]]
     wb = Workbook()
     wb.remove(wb.active)
-    sheet_rows(wb, "Todas", rows)
-    sheet_rows(wb, "Optantes Simples", [r for r in ok if r["optante_simples"] == "Sim"])
-    sheet_rows(wb, "MEI", [r for r in ok if r["enquadrado_mei"] == "Sim"])
-    sheet_rows(
+    _sheet_rows(wb, "Todas", rows, headers)
+    _sheet_rows(wb, "Optantes Simples", [r for r in ok if r["optante_simples"] == "Sim"], headers)
+    _sheet_rows(wb, "MEI", [r for r in ok if r["enquadrado_mei"] == "Sim"], headers)
+    _sheet_rows(
         wb,
         "Eventos Futuros",
         [
@@ -267,21 +257,30 @@ def _write_xlsx(rows: list[dict], path: Path) -> None:
             for r in ok
             if r["eventos_futuros_simples"] or r["eventos_futuros_simei"]
         ],
+        headers,
     )
-    sheet_rows(wb, "Erros", [r for r in rows if r["erro"]])
+    _sheet_rows(wb, "Erros", [r for r in rows if r["erro"]], headers)
     wb.save(path)
 
 
-async def main() -> None:
-    from app.consultar import consultar_apenas_optantes
+def _sheet_rows(wb, title: str, subset: list[dict], headers) -> None:
+    from openpyxl.utils import get_column_letter
 
-    out_dir = ROOT / "output"
-    out_dir.mkdir(exist_ok=True)
-    stamp = datetime.now().strftime("%Y%m%d_%H%M")
-    cache_path = out_dir / f"optantes_batch_{stamp}.json"
-    xlsx_path = out_dir / f"consultas_optantes_{stamp}.xlsx"
+    ws = wb.create_sheet(title)
+    ws.append([h[1] for h in headers])
+    for r in subset:
+        ws.append([r[k] for k, _ in headers])
+    for i, (_, label) in enumerate(headers, 1):
+        width = max(len(label), *(len(str(r[headers[i - 1][0]] or "")) for r in subset) if subset else [0])
+        ws.column_dimensions[get_column_letter(i)].width = min(max(width + 2, 12), 60)
 
-    # Reutilizar cache do mesmo dia se existir (retomada)
+
+def _rows_from_results(results: dict) -> list[dict]:
+    return [_row_from_result(c, v.get("data"), v.get("erro")) for c, v in sorted(results.items())]
+
+
+def _carregar_cache(out_dir: Path, cache_path: Path) -> tuple[dict, Path]:
+    # Compatibilidade: retoma o ultimo cache disponivel, inclusive de outro dia.
     caches = sorted(out_dir.glob("optantes_batch_*.json"), reverse=True)
     results: dict[str, dict] = {}
     if caches:
@@ -294,30 +293,49 @@ async def main() -> None:
         except (json.JSONDecodeError, OSError):
             pass
 
-    total = len(CNPJS)
-    for i, cnpj in enumerate(CNPJS, 1):
+    return results, cache_path
+
+
+def _salvar_progresso(results: dict, cache_path: Path, xlsx_path: Path) -> None:
+    cache_path.write_text(
+        json.dumps({"updated": datetime.now().isoformat(), "results": results}, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    rows = _rows_from_results(results)
+    _write_xlsx(rows, xlsx_path)
+
+
+async def _consultar_lote(cnpjs, results: dict, cache_path: Path, xlsx_path: Path, consultar) -> None:
+    total = len(cnpjs)
+    for i, cnpj in enumerate(cnpjs, 1):
         cnpj = cnpj.strip().zfill(14)
         if cnpj in results and "data" in results[cnpj] and not results[cnpj].get("erro"):
             continue
         print(f"[{i}/{total}] {cnpj}...", flush=True)
         try:
-            data = await consultar_apenas_optantes(cnpj)
+            data = await consultar(cnpj)
             results[cnpj] = {"data": data, "erro": None}
         except Exception as exc:
             results[cnpj] = {"data": None, "erro": str(exc)}
             print(f"  ERRO: {exc}", flush=True)
 
-        cache_path.write_text(
-            json.dumps({"updated": datetime.now().isoformat(), "results": results}, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
-        rows = [_row_from_result(c, v.get("data"), v.get("erro")) for c, v in sorted(results.items())]
-        _write_xlsx(rows, xlsx_path)
+        _salvar_progresso(results, cache_path, xlsx_path)
 
-    rows = [_row_from_result(c, v.get("data"), v.get("erro")) for c, v in sorted(results.items())]
+
+async def main() -> None:
+    from app.consultar import consultar_apenas_optantes
+
+    out_dir = ROOT / "output"
+    out_dir.mkdir(exist_ok=True)
+    stamp = datetime.now().strftime("%Y%m%d_%H%M")
+    cache_path = out_dir / f"optantes_batch_{stamp}.json"
+    xlsx_path = out_dir / f"consultas_optantes_{stamp}.xlsx"
+    results, cache_path = _carregar_cache(out_dir, cache_path)
+    await _consultar_lote(CNPJS, results, cache_path, xlsx_path, consultar_apenas_optantes)
+    rows = _rows_from_results(results)
     _write_xlsx(rows, xlsx_path)
     ok = sum(1 for r in rows if not r["erro"])
-    print(f"\nConcluído: {ok}/{total} OK")
+    print(f"\nConcluído: {ok}/{len(CNPJS)} OK")
     print(f"Planilha: {xlsx_path}")
     print(f"Cache JSON: {cache_path}")
 

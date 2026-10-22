@@ -12,7 +12,7 @@ from playwright.async_api import Error as PlaywrightError, TimeoutError as Playw
 
 from app.api import _safe_call
 from app.scrapers.optantes import consultar_optantes
-from test_optantes_parser import BrowserOffline, PaginaOffline, fixture
+from support.optantes import BrowserOffline, PaginaOffline, fixture
 
 AJAX = "https://optantes.test/consultaoptantes/Home/AjaxMaisInfo?cnpjHdn=43996591000101"
 

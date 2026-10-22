@@ -2,10 +2,10 @@ import unittest
 from copy import deepcopy
 from unittest.mock import AsyncMock, patch
 
-from app import consultar as consultas
+from app import consulta_service as consultas
 from app.errors import NaoOptanteError
 from app.models import OptantesResponse
-from test_consultar_recovery import PlaywrightLocal, Sessao
+from support.sessions import PlaywrightLocal, Sessao
 
 
 class TestDasnOutcome(unittest.IsolatedAsyncioTestCase):

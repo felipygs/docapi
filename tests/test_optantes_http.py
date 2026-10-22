@@ -14,7 +14,7 @@ from playwright.async_api import TimeoutError as PlaywrightTimeoutError
 
 from app.api import app
 from app.models import CadastroResponse, DasnResponse
-from test_optantes_models import eliane, conteudo
+from support.payloads import eliane, conteudo
 
 
 class TestOptantesHTTP(unittest.TestCase):
@@ -64,7 +64,7 @@ class TestOptantesHTTP(unittest.TestCase):
             raise AssertionError('Servidor HTTP de teste não encerrou')
 
     def post(self, path, body=None):
-        request = Request(self.base + path, data=json.dumps(body or {'cnpj': '43.996.591/0001-01'}).encode(), headers={'Content-Type': 'application/json'}, method='POST')
+        request = Request(self.base + path, data=json.dumps({'cnpj': '43.996.591/0001-01'} if body is None else body).encode(), headers={'Content-Type': 'application/json'}, method='POST')
         try:
             response = urlopen(request, timeout=10)
         except HTTPError as error:
@@ -75,6 +75,14 @@ class TestOptantesHTTP(unittest.TestCase):
     @staticmethod
     def agregado(payload):
         return {'cnpj': '43.996.591/0001-01', 'cadastro': CadastroResponse.model_config['json_schema_extra']['examples'][0], 'dasn': DasnResponse.model_config['json_schema_extra']['examples'][0], 'optantes': payload}
+
+    def test_entrada_invalida_retorna_422_antes_da_consulta(self):
+        for path in ('/consultar', '/consultar/cnpj', '/consultar/dasn', '/consultar/optantes'):
+            for payload in ({}, {'cnpj': ''}, {'cnpj': '123'}):
+                with self.subTest(path=path, payload=payload):
+                    status, body = self.post(path, payload)
+                    self.assertEqual(status, 422)
+                    self.assertEqual(body['detail'][0]['loc'], ['body', 'cnpj'])
 
     def test_openapi_2000_migracao_e_integridade_documentadas(self):
         with urlopen(self.base + '/openapi.json', timeout=10) as r:
@@ -160,11 +168,11 @@ class TestOptantesHTTP(unittest.TestCase):
         playwright_context.__aexit__ = AsyncMock(return_value=False)
         cadastro = deepcopy(CadastroResponse.model_config['json_schema_extra']['examples'][0])
         dasn = deepcopy(DasnResponse.model_config['json_schema_extra']['examples'][0])
-        with patch('app.consultar.async_playwright', return_value=playwright_context), \
-             patch('app.consultar.create_browser', AsyncMock(return_value=(browser, context))), \
-             patch('app.consultar.consultar_cnpj', AsyncMock(return_value=cadastro)), \
-             patch('app.consultar.consultar_dasn', AsyncMock(return_value=dasn)), \
-             patch('app.consultar.consultar_optantes', AsyncMock(side_effect=RuntimeError('Optantes - SIMEI: painel ausente'))):
+        with patch('app.consulta_service.async_playwright', return_value=playwright_context), \
+             patch('app.consulta_service.create_browser', AsyncMock(return_value=(browser, context))), \
+             patch('app.consulta_service.consultar_cnpj', AsyncMock(return_value=cadastro)), \
+             patch('app.consulta_service.consultar_dasn', AsyncMock(return_value=dasn)), \
+             patch('app.consulta_service.consultar_optantes', AsyncMock(side_effect=RuntimeError('Optantes - SIMEI: painel ausente'))):
             status, body = self.post('/consultar')
         self.assertEqual(status, 502)
         self.assertEqual(body, {'detail': 'Optantes - SIMEI: painel ausente'})
@@ -173,7 +181,7 @@ class TestOptantesHTTP(unittest.TestCase):
         playwright_context.__aexit__.assert_awaited_once()
 
     def test_agregado_cadastro_pendurado_retorna_504_e_libera_sessao(self):
-        from test_consultar_recovery import PlaywrightLocal, Sessao
+        from support.sessions import PlaywrightLocal, Sessao
 
         sessao = Sessao()
         seguintes = []
@@ -185,12 +193,12 @@ class TestOptantesHTTP(unittest.TestCase):
             seguintes.append(True)
             raise AssertionError('Executou modulo apos expirar o cadastro')
 
-        with patch('app.consultar.async_playwright', PlaywrightLocal), \
-             patch('app.consultar.create_browser', AsyncMock(return_value=(sessao, sessao))), \
-             patch('app.consultar.consultar_cnpj', cadastro), \
-             patch('app.consultar.consultar_dasn', indevido), \
-             patch('app.consultar.consultar_optantes', indevido), \
-             patch('app.consultar._CADASTRO_TIMEOUT_SECONDS', 0.02):
+        with patch('app.consulta_service.async_playwright', PlaywrightLocal), \
+             patch('app.consulta_service.create_browser', AsyncMock(return_value=(sessao, sessao))), \
+             patch('app.consulta_service.consultar_cnpj', cadastro), \
+             patch('app.consulta_service.consultar_dasn', indevido), \
+             patch('app.consulta_service.consultar_optantes', indevido), \
+             patch('app.consulta_service._CADASTRO_TIMEOUT_SECONDS', 0.02):
             status, body = self.post('/consultar')
         self.assertEqual(status, 504)
         self.assertIn('CNPJ', body['detail'])

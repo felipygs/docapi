@@ -7,7 +7,7 @@ from fastapi import HTTPException
 from app.api import _safe_call
 from app.scrapers.optantes import consultar_optantes
 from app.scrapers.optantes_parser import adquirir_snapshot, transformar_snapshot
-from test_optantes_parser import BrowserOffline, PaginaOffline, fixture, TITULOS
+from support.optantes import BrowserOffline, PaginaOffline, fixture, TITULOS
 
 
 class TestOptantesValidation(BrowserOffline):

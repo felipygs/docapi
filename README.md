@@ -37,3 +37,26 @@ Homologacao de 17/10/2026: [relatorio no historico](https://github.com/felipygs/
 Logs, capturas e experimentos devem ficar em `output/`, ignorado pelo Git.
 As evidencias antigas foram retiradas da pasta de trabalho e continuam no
 [historico do projeto](https://github.com/felipygs/docapi/tree/864491503e8961bd5c2400c9776a6ad943d12e5d/output).
+
+O utilitario `scripts/batch_optantes_xlsx.py` requer `openpyxl`, opcional para a
+API: instale com `python -m pip install openpyxl`. O lote retoma o cache mais
+recente disponivel em `output/`, inclusive de outro dia, e tenta novamente
+consultas que falharam.
+
+Para desenvolvimento, `python -m pip install -r requirements-test.txt` instala
+tambem a dependencia do exportador. Execute a suite offline com
+`python -B -m unittest discover -s tests -v`, com Google Chrome instalado e
+`PYTHON_DOTENV_DISABLED=1` para isolar a configuracao local. O CI executa essa
+suite no Python 3.12 antes de publicar a imagem.
+
+As fachadas `app.consultar`, `app.models` e `app.captcha` preservam os imports
+existentes. A coordenacao fica em `consulta_service`, os prazos e sessoes em
+`execution`, e as regras de resultado DASN em `dasn_outcome`. Cada scraper
+mantem seu protocolo; os parsers transformam dados sem executar consultas.
+
+Pontos conhecidos preservados nesta refatoracao: a validacao de entrada HTTP
+pode retornar 422 apesar do 400 documentado para CNPJ invalido; NoPeCHA mantem
+polling por iteracoes, mensagens de erro externas e seu tipo de timeout;
+cancelar a espera de `asyncio.to_thread` nao interrompe a thread do solver.
+O tratamento HTTP atual tambem preserva mensagens de excecoes genericas.
+Essas correcoes de comportamento exigem mudancas separadas.

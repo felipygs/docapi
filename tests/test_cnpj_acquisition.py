@@ -41,6 +41,8 @@ class CnpjAcquisitionTests(unittest.IsolatedAsyncioTestCase):
         self.captcha_valido = True
         self.qsa_status = 200
         self.enviado = None
+        self.validacoes = 0
+        self.rejeitar_primeiro = False
         self.cadastro = json.loads((Path(__file__).parent/'fixtures/cnpj/cadastro.json').read_text(encoding='utf8'))
         await self.page.route('**/*', self.route)
 
@@ -50,16 +52,31 @@ class CnpjAcquisitionTests(unittest.IsolatedAsyncioTestCase):
             return await route.fulfill(content_type='text/html', body=HTML)
         if url == API+'validar-captcha':
             self.enviado = route.request.post_data_json
-            return await route.fulfill(json={'valido': self.captcha_valido})
+            self.validacoes += 1
+            valido = self.captcha_valido and not (self.rejeitar_primeiro and self.validacoes == 1)
+            return await route.fulfill(json={'valido': valido})
         if url == API+'cnpj/'+CNPJ:
             return await route.fulfill(json=self.cadastro)
         if url == API+'qsa/'+CNPJ:
             return await route.fulfill(status=self.qsa_status,json={'socios': []})
         await route.abort()
 
-    async def consultar(self):
+    async def consultar(self, max_retries=1):
         with patch('app.scrapers.cnpj.CNPJ_URL', URL), patch('app.scrapers.cnpj.NONECAP_API_KEY', 'CHAVE_TESTE', create=True), patch('app.scrapers.cnpj.resolver_hcaptcha_nonecap', return_value={'token':'TOKEN_TESTE', 'user_agent':'UA_TESTE'}, create=True):
-            return await consultar_cnpj(self.page, CNPJ, max_retries=1)
+            return await consultar_cnpj(self.page, CNPJ, max_retries=max_retries)
+
+    async def test_captcha_rejeitado_recupera_na_mesma_pagina_e_obtem_qsa(self):
+        self.rejeitar_primeiro = True
+        resultado = await self.consultar(max_retries=2)
+        self.assertEqual(self.validacoes, 2)
+        self.assertEqual(resultado['socios'], [])
+        self.assertTrue(self.page.url.endswith('/qsa'))
+
+    async def test_tentativas_invalidas_rejeitadas_antes_de_navegar(self):
+        for quantidade in (0, 4):
+            with self.subTest(quantidade=quantidade), self.assertRaises(ValueError):
+                await self.consultar(max_retries=quantidade)
+        self.assertEqual(self.page.url, 'about:blank')
 
     async def test_fluxo_atual_preenche_cnpj_callback_consulta_e_qsa(self):
         r = await self.consultar()
