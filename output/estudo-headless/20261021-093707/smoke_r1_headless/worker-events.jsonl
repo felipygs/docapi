@@ -1,3 +1,0 @@
-{"t": 1792586603.617184, "kind": "worker_start", "pid": 24920, "mode": "headless", "port": 55973}
-{"t": 1792586604.3760998, "kind": "launch", "options": {"channel": "chrome", "headless": true, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage"]}}
-{"t": 1792586606.3979347, "kind": "worker_end"}

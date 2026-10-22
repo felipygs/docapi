@@ -1,8 +1,0 @@
-{"t": 1792587442.772725, "kind": "worker_start", "pid": 10868, "mode": "control", "port": 65077}
-{"t": 1792587443.6274319, "kind": "app_log", "message": "modulo=DASN tentativa=1 evento=inicio"}
-{"t": 1792587443.6280117, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
-{"t": 1792587455.8882427, "kind": "app_log", "message": "modulo=DASN tentativa=1 duracao=12.261 codigo=captcha_bloqueado"}
-{"t": 1792587457.8993304, "kind": "app_log", "message": "modulo=DASN tentativa=2 evento=inicio"}
-{"t": 1792587457.9045274, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
-{"t": 1792587470.1915529, "kind": "app_log", "message": "modulo=DASN tentativa=2 duracao=12.294 codigo=ok"}
-{"t": 1792587470.3645804, "kind": "worker_end"}

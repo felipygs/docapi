@@ -3,7 +3,7 @@ from pydantic import BaseModel
 from playwright.async_api import TimeoutError as PlaywrightTimeoutError
 from .models import (
     ConsultaRequest, ConsultaResponse,
-    CadastroResponse, DasnResponse, DasnResultado, OptantesResponse,
+    CadastroResponse, DasnResultado, OptantesResponse,
 )
 from .consultar import (
     consultar_mei,

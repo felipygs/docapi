@@ -35,8 +35,8 @@ O portal informou expressamente que a natureza jurídica 213-5 não permite
 preenchimento do QSA; a ausência de integrantes foi confirmada na origem.
 
 Os JSONs retornados estão em
-`output/homologacao_cnpj_20261017/http_37482317000111.json` e
-`output/homologacao_cnpj_20261017/http_00000000000191.json`.
+[output/homologacao_cnpj_20261017/http_37482317000111.json](https://github.com/felipygs/docapi/blob/864491503e8961bd5c2400c9776a6ad943d12e5d/output/homologacao_cnpj_20261017/http_37482317000111.json) e
+[output/homologacao_cnpj_20261017/http_00000000000191.json](https://github.com/felipygs/docapi/blob/864491503e8961bd5c2400c9776a6ad943d12e5d/output/homologacao_cnpj_20261017/http_00000000000191.json).
 As capturas iniciais de comprovante/QSA, respostas da origem e scripts de
 reprodução estão no mesmo diretório. Nenhuma credencial ou token foi gravado
 nessas evidências.
@@ -68,7 +68,7 @@ Comando da suíte completa:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-Log: `output/homologacao_cnpj_20261017/testes-locais.log`.
+Log: [output/homologacao_cnpj_20261017/testes-locais.log](https://github.com/felipygs/docapi/blob/864491503e8961bd5c2400c9776a6ad943d12e5d/output/homologacao_cnpj_20261017/testes-locais.log).
 Resultado: **146 testes passaram**, sem falhas, em 540,479 segundos.
 Compilação Python (`compileall`) e `git diff --check` também passaram.
 

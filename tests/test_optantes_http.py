@@ -150,6 +150,7 @@ class TestOptantesHTTP(unittest.TestCase):
     def test_agregado_real_propaga_falha_optantes_e_fecha_browser(self):
         # Não mocka app.api.consultar_mei: executa a orquestração real.
         # Somente browser e consultas externas são substituídos.
+        # Falha definitiva não usa backoff; preservar asyncio.sleep do Uvicorn.
         browser = MagicMock()
         browser.close = AsyncMock()
         context = MagicMock()
@@ -163,8 +164,7 @@ class TestOptantesHTTP(unittest.TestCase):
              patch('app.consultar.create_browser', AsyncMock(return_value=(browser, context))), \
              patch('app.consultar.consultar_cnpj', AsyncMock(return_value=cadastro)), \
              patch('app.consultar.consultar_dasn', AsyncMock(return_value=dasn)), \
-             patch('app.consultar.consultar_optantes', AsyncMock(side_effect=RuntimeError('Optantes - SIMEI: painel ausente'))), \
-             patch('app.consultar.asyncio.sleep', AsyncMock()):
+             patch('app.consultar.consultar_optantes', AsyncMock(side_effect=RuntimeError('Optantes - SIMEI: painel ausente'))):
             status, body = self.post('/consultar')
         self.assertEqual(status, 502)
         self.assertEqual(body, {'detail': 'Optantes - SIMEI: painel ausente'})

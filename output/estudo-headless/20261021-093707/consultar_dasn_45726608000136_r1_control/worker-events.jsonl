@@ -1,5 +1,0 @@
-{"t": 1792586898.57902, "kind": "worker_start", "pid": 18352, "mode": "control", "port": 64703}
-{"t": 1792586899.4279523, "kind": "app_log", "message": "modulo=DASN tentativa=1 evento=inicio"}
-{"t": 1792586899.4285636, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
-{"t": 1792586907.8976116, "kind": "app_log", "message": "modulo=DASN tentativa=1 duracao=8.470 codigo=ok"}
-{"t": 1792586908.118273, "kind": "worker_end"}

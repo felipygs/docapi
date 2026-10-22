@@ -14,9 +14,3 @@ CNPJ_URL = "https://solucoes.receita.fazenda.gov.br/Servicos/cnpjreva/"
 
 NOPECHA_API_KEY = os.environ.get("NOPECHA_API_KEY", "")
 NONECAP_API_KEY = os.environ.get("NONECAP_API_KEY", "")
-
-UFS_VALIDAS = {
-    "AC", "AL", "AM", "AP", "BA", "CE", "DF", "ES", "GO", "MA", "MG", "MS",
-    "MT", "PA", "PB", "PE", "PI", "PR", "RJ", "RN", "RO", "RR", "RS", "SC",
-    "SE", "SP", "TO",
-}

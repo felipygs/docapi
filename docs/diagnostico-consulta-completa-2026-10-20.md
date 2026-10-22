@@ -35,12 +35,12 @@ cinco declaracoes DASN e identidade Optantes correspondente ao CNPJ consultado.
 
 ## Evidencias
 
-- `output/server.before-diagnostico.stdout.log`: HTTP 502 anterior.
-- `output/diagnostico_completa_45726608000136.json`: primeira reproducao.
-- `output/diagnostico_completa_http_45726608000136.json`: HTTP antes dos ajustes.
-- `output/validacao_completa_45726608000136.json`: HTTP com os ajustes.
-- `output/server.stderr.log`: diagnosticos por modulo do servidor atualizado.
-- `output/testes-consulta-completa.log`: suite local de regressao.
+- [output/server.before-diagnostico.stdout.log](https://github.com/felipygs/docapi/blob/864491503e8961bd5c2400c9776a6ad943d12e5d/output/server.before-diagnostico.stdout.log): HTTP 502 anterior.
+- [output/diagnostico_completa_45726608000136.json](https://github.com/felipygs/docapi/blob/864491503e8961bd5c2400c9776a6ad943d12e5d/output/diagnostico_completa_45726608000136.json): primeira reproducao.
+- [output/diagnostico_completa_http_45726608000136.json](https://github.com/felipygs/docapi/blob/864491503e8961bd5c2400c9776a6ad943d12e5d/output/diagnostico_completa_http_45726608000136.json): HTTP antes dos ajustes.
+- [output/validacao_completa_45726608000136.json](https://github.com/felipygs/docapi/blob/864491503e8961bd5c2400c9776a6ad943d12e5d/output/validacao_completa_45726608000136.json): HTTP com os ajustes.
+- [output/server.stderr.log](https://github.com/felipygs/docapi/blob/864491503e8961bd5c2400c9776a6ad943d12e5d/output/server.stderr.log): diagnosticos por modulo do servidor atualizado.
+- [output/testes-consulta-completa.log](https://github.com/felipygs/docapi/blob/864491503e8961bd5c2400c9776a6ad943d12e5d/output/testes-consulta-completa.log): suite local de regressao.
 
 Os testes de regressao verificam prazo total, liberacao da sessao, HTTP 504
 sem dados parciais e ativacao dos diagnosticos pelo comando do servidor.

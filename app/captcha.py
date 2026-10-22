@@ -110,19 +110,5 @@ def _resolver_token(captcha_type: str, website_url: str, site_key: str,
     return _poll_token(job_id, timeout_s)
 
 
-def submit_recaptcha_v2(website_url: str, site_key: str, enterprise: bool = False) -> str:
-    """Submete job reCAPTCHA v2 e retorna job_id (nao-bloqueante)."""
-    return _submit_job("recaptcha2", website_url, site_key, enterprise=enterprise)
-
-
-def poll_recaptcha_token(job_id: str, timeout_s: int = 180) -> str:
-    """Aguarda token do job reCAPTCHA (bloqueante)."""
-    return _poll_token(job_id, timeout_s)
-
-
 def resolver_hcaptcha(website_url: str, site_key: str) -> str:
     return _resolver_token("hcaptcha", website_url, site_key)
-
-
-def resolver_recaptcha_v2(website_url: str, site_key: str, enterprise: bool = False) -> str:
-    return _resolver_token("recaptcha2", website_url, site_key, enterprise=enterprise)

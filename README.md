@@ -3,6 +3,17 @@
 Execute `python main.py --server` e envie `POST /consultar/cnpj` com
 `{"cnpj":"37482317000111"}`. CNPJ com mascara tambem e aceito.
 
+No Windows, com as dependencias instaladas na `.venv`:
+
+```powershell
+.\.venv\Scripts\python.exe main.py --server
+```
+
+A pagina de testes fica em `http://localhost:8000/docs`. Para usar a CLI,
+execute `python main.py <CNPJ>`; `--json` acrescenta a resposta completa em JSON
+ao resumo. DASN nao consultada e apresentada como tal, sem afirmar ausencia
+de pendencias.
+
 Instale `requirements.txt` e configure `NONECAP_API_KEY` no `.env` da raiz
 (modelo em `.env.example`). A aplicacao carrega esse arquivo automaticamente;
 variaveis ja definidas no ambiente tem prioridade. O `.env` e ignorado pelo Git.
@@ -22,3 +33,7 @@ Dados de outro CNPJ, resposta incompleta ou falha no QSA retornam erro;
 socios vazios representam ausencia confirmada na origem.
 
 Homologacao de 17/10/2026: [relatorio](docs/validacao-cnpj-2026-10-17.md).
+
+Logs, capturas e experimentos devem ficar em `output/`, ignorado pelo Git.
+As evidencias antigas foram retiradas da pasta de trabalho e continuam no
+[historico do projeto](https://github.com/felipygs/docapi/tree/864491503e8961bd5c2400c9776a6ad943d12e5d/output).

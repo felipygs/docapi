@@ -1,8 +1,0 @@
-{"t": 1792587644.7747574, "kind": "worker_start", "pid": 22220, "mode": "control", "port": 53921}
-{"t": 1792587645.54973, "kind": "app_log", "message": "modulo=Optantes tentativa=1 evento=inicio"}
-{"t": 1792587645.5503173, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
-{"t": 1792587647.8287714, "kind": "app_log", "message": "modulo=Optantes tentativa=1 duracao=2.279 codigo=captcha_bloqueado"}
-{"t": 1792587649.8381226, "kind": "app_log", "message": "modulo=Optantes tentativa=2 evento=inicio"}
-{"t": 1792587649.8430948, "kind": "launch", "options": {"channel": "chrome", "headless": false, "args": ["--disable-blink-features=AutomationControlled", "--no-sandbox", "--disable-dev-shm-usage", "--window-position=-32000,-32000", "--window-size=1,1"]}}
-{"t": 1792587663.6920063, "kind": "app_log", "message": "modulo=Optantes tentativa=2 duracao=13.855 codigo=ok"}
-{"t": 1792587663.8773885, "kind": "worker_end"}

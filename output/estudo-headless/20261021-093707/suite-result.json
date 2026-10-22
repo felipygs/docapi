@@ -1,5 +1,0 @@
-﻿{
-    "duration_seconds":  298.3763628,
-    "command":  ".venv/Scripts/python.exe -m unittest discover -s tests -v",
-    "exit_code":  0
-}
