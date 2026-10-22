@@ -299,9 +299,6 @@ async def main() -> None:
         cnpj = cnpj.strip().zfill(14)
         if cnpj in results and "data" in results[cnpj] and not results[cnpj].get("erro"):
             continue
-        if cnpj in results and results[cnpj].get("erro"):
-            # tentar de novo erros anteriores
-            pass
         print(f"[{i}/{total}] {cnpj}...", flush=True)
         try:
             data = await consultar_apenas_optantes(cnpj)

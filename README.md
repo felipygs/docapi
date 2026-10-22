@@ -32,7 +32,7 @@ O retorno mantem `CadastroResponse`, incluindo capital social em centavos.
 Dados de outro CNPJ, resposta incompleta ou falha no QSA retornam erro;
 socios vazios representam ausencia confirmada na origem.
 
-Homologacao de 17/10/2026: [relatorio](docs/validacao-cnpj-2026-10-17.md).
+Homologacao de 17/10/2026: [relatorio no historico](https://github.com/felipygs/docapi/blob/df7d856c832c70c161c8b0358f034c3e3e0d8a5b/docs/validacao-cnpj-2026-10-17.md).
 
 Logs, capturas e experimentos devem ficar em `output/`, ignorado pelo Git.
 As evidencias antigas foram retiradas da pasta de trabalho e continuam no

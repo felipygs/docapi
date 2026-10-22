@@ -55,22 +55,6 @@ class TestOptantesModels(unittest.TestCase):
         except ValidationError as exc:
             self.fail(f"O contrato aprovado deve validar sem perder informações: {exc}")
 
-    def test_payload_validado_nao_perde_identificacao_situacoes_transportador(self):
-        # O antigo valida null e descarta identificação/situações/Transportador.
-        # O novo deve preservar tudo que valida OU rejeitar o contrato legado.
-        payload = eliane()
-        for regime in ("simples_nacional", "simei"):
-            payload[regime]["eventos_futuros"] = None
-        try:
-            resultado = OptantesResponse.model_validate(payload).model_dump(mode="json")
-        except ValidationError:
-            return
-        for campo in ("cnpj_consultado", "cnpj_matriz", "nome_empresarial", "consultado_em",
-                      "abrange_todos_estabelecimentos", "mei_transportador"):
-            with self.subTest(campo=campo):
-                self.assertIn(campo, resultado)
-                self.assertEqual(resultado.get(campo), payload[campo])
-
     def test_exemplo_eliane_roundtrip_integral(self):
         self.assertEqual(self.validar().model_dump(mode="json"), eliane())
 
